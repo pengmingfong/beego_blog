@@ -1,7 +1,7 @@
 package models
 
 import (
-	"time"
+	// "time"
 
 	"github.com/astaxie/beego/orm"
 )
@@ -16,8 +16,8 @@ type Article struct {
 	Content     string
 	Status      int
 	Index       int
-	Created     time.Time
-	Updated     time.Time
+	Created     string
+	Updated     string
 }
 
 func (a *Article) TableName() string {

@@ -147,7 +147,7 @@ func (a *ArticleController) AddOne() {
 		img = beego.AppConfig.String("host") + path + h.Filename
 	}
 
-	// 准备article指针 插入数据
+	// 准备article指针 插入数据数据
 	article := new(models.Article)
 	article.Title = title
 	article.Sub_title = stitle
@@ -156,6 +156,8 @@ func (a *ArticleController) AddOne() {
 	article.Index = index
 	article.Content = content
 	article.Image = img
+	article.Created = time.Now().Format("2006-01-02 15:04:05")
+	article.Updated = time.Now().Format("2006-01-02 15:04:05")
 
 	id, err := models.Addarticle(article)
 	if err != nil || id == 0 {
