@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{.title}}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+<link href="/static/css/index.css" rel="stylesheet">
+<link href="/static/css/article.css" rel="stylesheet">
+    <body>
+  <div style="width:1200px;margin:auto">
+<div class="search" >
+		<form action="/site/search" method="get">
+			<input type="submit" value="搜索">
+			<input type="text" class="keyword" name="keyword">
+		</form>
+		
+	</div>
+<div class="logo" >
+ <img src="static/img/20200415203535.png"/>
+</div>
+	<div class="header">
+<ul id="menu">
+<li><a href="/">首页</a></li>
+{{range.list}}
+<li><a href="list?cid={{.id}}">{{.name}}</a></li>
+{{end}}
+</ul>
+</div>
+<div id="banner">
+    <img src="static/img/20200415203546.jpg"/>      
+</div>

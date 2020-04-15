@@ -1,0 +1,15 @@
+{{template "home/layout.html" .}}
+
+<div class="article">
+<div class="detail-category">当前位置：<a href="">新闻中心</a></p></div>
+<div class="detail-title">
+    <p>{{.content.Title}}</p>
+</div>
+<div class="detail-line"></div>
+
+<div class="detail-time">
+ <p>发布时间:{{date .content.Created "Y-m-d"}}</p>
+</div>
+<div class="detail-content">{{str2html .content.Content}}</div>
+</div>
+{{template "home/footer.html" .}}

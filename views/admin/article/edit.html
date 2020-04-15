@@ -1,0 +1,71 @@
+{{template "admin/layout.html" .}}
+    <div style="width:1200px;margin:0 auto;">
+      <form action="/admin/article/edit?id={{.data.Id}}" method="post" enctype="multipart/form-data">
+  <div class="form-group" >
+    <label for="exampleInputEmail1">标题</label>
+    <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="标题" value="{{.data.Title}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">副标题</label>
+    <input type="text" class="form-control" name="sub_title" id="exampleInputEmail1" placeholder="副标题" value="{{.data.Sub_title}}">
+  </div>
+<div class="form-group">
+<label for="exampleInputEmail1">文章分类</label>
+<select class="form-control" name="cid">
+  {{range .categorys}}
+  <option value="{{.id}}" {{if eq .id  $.data.Cid}}selected{{end}}>{{.name}}</option>
+{{end}}
+</select>
+  </div>
+  <div class="form-group">
+    <img src="{{.data.Image}}" style="width:200px;height:100px;" />
+    <label for="exampleInputFile">封面图片</label>
+    <input type="file" id="exampleInputFile" name="filename">
+  </div>
+  <div class="checkbox">
+
+<label for="exampleInputEmail1">是否显示</label>
+<select class="form-control" name="status">
+  
+  <option value=1 {{if eq $.data.Status 1}}selected{{end}}>是</option>
+  <option value=0 {{if eq $.data.Status 0}}selected{{end}}>否</option>
+</select>
+  </div>
+  
+  <div class="checkbox">
+
+<label for="exampleInputEmail1">首页显示（首页文章根据创建时间排序）</label>
+<select class="form-control" name="index">
+  <option value=0 {{if eq $.data.Index 0}}selected{{end}}>否</option>
+  <option value=1 {{if eq $.data.Index 1}}selected{{end}}>是</option>
+</select>
+  </div>
+<div id="div1">
+        
+</div>
+    <textarea id="content" style="display:none" name="content" value="{{.data.Content}}">{{.data.Content}}</textarea>
+
+    
+    <script type="text/javascript" src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js"></script>
+    <script type="text/javascript" src="../wangEditor.js"></script>
+    <script type="text/javascript">
+        var E = window.wangEditor
+        var editor = new E('#div1')
+        var $content = $('#content')
+        editor.customConfig.onchange = function (html) {
+            // 监控变化，同步更新到 textarea
+            $content.val(html)
+        }
+        editor.customConfig.uploadImgServer = '/upload'
+        editor.customConfig.uploadFileName = 'filename'
+        editor.customConfig.uploadImgMaxLength = 5
+        editor.create()
+        // 初始化 textarea 的值
+        editor.txt.html({{.data.Content}})
+    </script>
+
+  <button type="submit" class="btn btn-default" id="btn1">修改</button>
+</form>
+    </div>
+        
+{{template "admin/footer.html" .}}

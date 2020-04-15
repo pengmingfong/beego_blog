@@ -1,0 +1,72 @@
+{{template "home/layout.html" .}}
+<div id="product">
+<h1>PRODUCTS|产品鉴赏</h1>
+<div class="product-list">
+  <ul>
+{{range.productarticle}}
+<li style="border-bottom-width: 2px">
+<img src="{{.image}}" />
+<a href="/detail?id={{.id}}"><p class="product-list-title">{{.title}}</p></a>
+<p class="product-list-desc">{{.sub_title}}</p>
+<a href="/list?cid={{.cid}}"><p class="product-list-border">进入产品系列</p></a>
+</li>
+{{end}}
+  </ul>
+</div>  
+</div>
+
+<div id="aboutus">
+<img class="aboutus-leftimg" src="/static/img/7b5195593a7441350ac0ca252cd78ef.jpg">
+<div class="aboutus-right">
+  <img src="/static/img/about.png">
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(第三届)中国国际集藏文化博览会于9月8日在江苏南京国际展览中心举行，展期至9月11日，历时4天。中国国际集藏文化博览会是我国目前规模最大的集藏文化类国际专业展会，每两年一届，现已成功举办两届。本届博览会以“传承、交流、合作、发展”为主题，设五大展区，以全真品展示，同时增加了亲子互动、
+时装走秀、公益拍卖、现场抽奖等活动，提升了本届展会的时尚性、互动性和公益性，满足了不同集藏喜好和不同年龄段参...</p>
+</div>
+</div>
+
+<div id="news">
+<div class="news-top">
+  <hr  class="news-top-left" />
+  <p class="news-top-title">NEWS 新闻</p>
+  <hr  class="news-top-right"/>
+</div>
+<div class="news-left">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586606191242&di=035347cd61ceea12880d79511206a1b4&imgtype=0&src=http%3A%2F%2Fres.dyhjw.com%2Fueditor%2Fphp%2Fupload%2Fimage%2F20161103%2F1478137180739523.png"/>
+</div>
+<div class="news-right">
+  <p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2423097242,239184669&fm=26&gp=0.jpg" />黄金头条<a href="/list?cid=9">更多</a></p>
+  <ul>
+{{range.goldlist}}
+    <li><a href="/detail?id={{.id}}">{{.title}}</a></li>
+{{end}}
+
+</div>
+<div class="news-right">
+<p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2423097242,239184669&fm=26&gp=0.jpg" />国际新闻<a href="/list?cid=10">更多</a></p>
+<ul>
+    {{range.nationallist}}
+    <li><a href="/detail?id={{.id}}">{{.title}}</a></li>
+{{end}}
+  </ul>
+</div>
+
+</div>
+
+<div id="dongtai">
+<p class="dongtai-title">企业动态</p>
+<div class="dongtai-list">
+  <img src="/static/img/d7482d3975be70b84fa33b7b13148ee.jpg" />
+<a href=""><p>企业发展时间线<p/></a>
+</div>
+<div class="dongtai-list">
+  <img src="/static/img/1d06656686035c057b3a4b0a0ba1d5c.jpg" />
+<a href=""><p>企业培训<p/></a>
+</div>
+<div class="dongtai-list">
+  <img src="/static/img/1c4b2a3043dfae521e0fa2d90c91625.jpg" />
+<a href=""><p>管理才能训练<p/></a>
+</div>
+</div>
+
+
+{{template "home/footer.html" .}}
