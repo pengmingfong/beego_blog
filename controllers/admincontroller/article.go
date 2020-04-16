@@ -204,7 +204,6 @@ func (a *ArticleController) Upload() {
 		defer file.Close()
 		if err != nil {
 			mystruct["msg"] = "3333"
-			return
 		}
 		//create destination file making sure the path is writeable.
 		fname := path + files[i].Filename
@@ -212,12 +211,10 @@ func (a *ArticleController) Upload() {
 		defer dst.Close()
 		if err != nil {
 			mystruct["msg"] = "11111111"
-			return
 		}
 		//copy the uploaded file to the destination file
 		if _, err := io.Copy(dst, file); err != nil {
 			mystruct["msg"] = "222"
-			return
 		}
 		img[i] =  fname
 	}
