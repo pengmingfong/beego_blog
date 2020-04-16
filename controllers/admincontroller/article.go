@@ -117,7 +117,7 @@ func (a *ArticleController) EditOne() {
 		defer f.Close()
 		path := CreateDateDir()
 		a.SaveToFile("filename", path+h.Filename)
-		img = path + h.Filename
+		img = "/" +  path + h.Filename
 	}
 
 	article.Image = img
@@ -144,7 +144,7 @@ func (a *ArticleController) AddOne() {
 		defer f.Close()
 		path := CreateDateDir()
 		a.SaveToFile("filename", path+h.Filename)
-		img = path + h.Filename
+		img = "/" +  path + h.Filename
 	}
 
 	// 准备article指针 插入数据数据
@@ -179,7 +179,7 @@ func (i *ArticleController) Uploadone() {
 	i.SaveToFile("filename", path+h.Filename)
 	mystruct := make(map[string]interface{}, 0)
 	var arr [1]string
-	arr[0] = path + h.Filename
+	arr[0] = "/" +  path + h.Filename
 
 	mystruct["errno"] = 0
 	mystruct["data"] = arr
@@ -216,7 +216,7 @@ func (a *ArticleController) Upload() {
 		if _, err := io.Copy(dst, file); err != nil {
 			mystruct["msg"] = "222"
 		}
-		img[i] =  fname
+		img[i] =  "/" + fname
 	}
 	mystruct["data"] = img
 	a.Data["json"] = &mystruct
