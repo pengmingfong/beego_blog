@@ -226,7 +226,7 @@ func (a *ArticleController) Upload() {
 // 创建文件夹
 func CreateDateDir() string {
 	folderName := time.Now().Format("2020-01-01")
-	folderPath := "static/upload/" + string(folderName)
+	folderPath := "/static/upload/" + string(folderName)
 	if _, err := os.Stat(folderPath); os.IsNotExist(err) {
 		// 必须分成两步：先创建文件夹、再修改权限
 		os.Mkdir(folderPath, 0777) //0777也可以os.ModePerm
