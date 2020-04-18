@@ -117,7 +117,7 @@ func (a *ArticleController) EditOne() {
 		defer f.Close()
 		path := CreateDateDir()
 		a.SaveToFile("filename", path+h.Filename)
-		img = beego.AppConfig.String("host") + path + h.Filename
+		img = "/" +  path + h.Filename
 	}
 
 	article.Image = img
@@ -144,7 +144,7 @@ func (a *ArticleController) AddOne() {
 		defer f.Close()
 		path := CreateDateDir()
 		a.SaveToFile("filename", path+h.Filename)
-		img = beego.AppConfig.String("host") + path + h.Filename
+		img = "/" +  path + h.Filename
 	}
 
 	// 准备article指针 插入数据数据
@@ -179,7 +179,7 @@ func (i *ArticleController) Uploadone() {
 	i.SaveToFile("filename", path+h.Filename)
 	mystruct := make(map[string]interface{}, 0)
 	var arr [1]string
-	arr[0] = beego.AppConfig.String("host") + path + h.Filename
+	arr[0] = "/" +  path + h.Filename
 
 	mystruct["errno"] = 0
 	mystruct["data"] = arr
@@ -204,7 +204,6 @@ func (a *ArticleController) Upload() {
 		defer file.Close()
 		if err != nil {
 			mystruct["msg"] = "3333"
-			return
 		}
 		//create destination file making sure the path is writeable.
 		fname := path + files[i].Filename
@@ -212,14 +211,12 @@ func (a *ArticleController) Upload() {
 		defer dst.Close()
 		if err != nil {
 			mystruct["msg"] = "11111111"
-			return
 		}
 		//copy the uploaded file to the destination file
 		if _, err := io.Copy(dst, file); err != nil {
 			mystruct["msg"] = "222"
-			return
 		}
-		img[i] = beego.AppConfig.String("host") + fname
+		img[i] =  "/" + fname
 	}
 	mystruct["data"] = img
 	a.Data["json"] = &mystruct
@@ -228,7 +225,7 @@ func (a *ArticleController) Upload() {
 
 // 创建文件夹
 func CreateDateDir() string {
-	folderName := time.Now().Format("2020-01-01")
+	folderName := time.Now().Format("2006-01-02")
 	folderPath := "static/upload/" + string(folderName)
 	if _, err := os.Stat(folderPath); os.IsNotExist(err) {
 		// 必须分成两步：先创建文件夹、再修改权限
