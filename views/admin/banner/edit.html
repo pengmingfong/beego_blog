@@ -3,9 +3,9 @@
 <form method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="exampleInputEmail1">优先级</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="优先级" name="level">
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="优先级" name="level" value={{.data.Level}}>
   </div>
-  
+  <img src="{{.data.Image}}" style="width:100px;height:200px;"/>
   <input type="file" name="filename"/>
   
   

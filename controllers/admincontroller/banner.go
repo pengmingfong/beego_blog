@@ -46,7 +46,7 @@ func (c *BannerController) AddOne() {
 		defer f.Close()
 		path := CreateDateDir()
 		c.SaveToFile("filename", path+h.Filename)
-		image = path + h.Filename
+		image = "/" + path + h.Filename
 	}
 
 	banner := new(models.Banner)
@@ -82,7 +82,7 @@ func (c *BannerController) EditOne() {
 		defer f.Close()
 		path := CreateDateDir()
 		c.SaveToFile("filename", path+h.Filename)
-		image = path + h.Filename
+		image = "/" + path + h.Filename
 	}
 	bannber.Image = image
 
