@@ -1,7 +1,7 @@
 {{template "home/layout.html" .}}
 
 <div class="article">
-<div class="detail-category">当前位置：<a href="">新闻中心</a></p></div>
+<div class="detail-category">当前位置：<a href="list?cid={{.category.Id}}">{{.category.Name}}</a></p></div>
 <div class="detail-title">
     <p>{{.content.Title}}</p>
 </div>

@@ -6,6 +6,8 @@
     </head>
 <link href="/static/css/index.css" rel="stylesheet">
 <link href="/static/css/article.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/layui/css/layui.css"  media="all">
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <body>
   <div style="width:1200px;margin:auto">
 <div class="search" >
@@ -27,5 +29,88 @@
 </ul>
 </div>
 <div id="banner">
-    <img src="static/img/20200415203546.jpg"/>      
+<div class="layui-carousel" id="test1" lay-filter="test1">
+  <div class="layui-carousel" id="test3" lay-filter="test4">
+  <div carousel-item="">
+    {{range.bannerlist}}
+    <div><img  src="{{.image}}" /></div>
+    {{end}}
+  </div>
+</div> 
+</div> 
 </div>
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<script>
+layui.use(['carousel', 'form'], function(){
+  var carousel = layui.carousel
+  ,form = layui.form;
+  
+  //常规轮播
+  carousel.render({
+    elem: '#test1'
+    ,arrow: 'always'
+  });
+  
+  //改变下时间间隔、动画类型、高度
+  carousel.render({
+    elem: '#test2'
+    ,interval: 1800
+    ,anim: 'fade'
+    ,height: '120px'
+  });
+  
+  //设定各种参数
+  var ins3 = carousel.render({
+    elem: '#test3'
+  ,width: '1200px'
+    ,height: '350px'
+    ,interval: 5000
+  });
+  //图片轮播
+  carousel.render({
+    elem: '#test10'
+    ,width: '1200px'
+    ,height: '350px'
+    ,interval: 5000
+  });
+  
+  //事件
+  carousel.on('change(test4)', function(res){
+    console.log(res)
+  });
+  
+  var $ = layui.$, active = {
+    set: function(othis){
+      var THIS = 'layui-bg-normal'
+      ,key = othis.data('key')
+      ,options = {};
+      
+      othis.css('background-color', '#5FB878').siblings().removeAttr('style'); 
+      options[key] = othis.data('value');
+      ins3.reload(options);
+    }
+  };
+  
+  //监听开关
+  form.on('switch(autoplay)', function(){
+    ins3.reload({
+      autoplay: this.checked
+    });
+  });
+  
+  $('.demoSet').on('keyup', function(){
+    var value = this.value
+    ,options = {};
+    if(!/^\d+$/.test(value)) return;
+    
+    options[this.name] = value;
+    ins3.reload(options);
+  });
+  
+  //其它示例
+  $('.demoTest .layui-btn').on('click', function(){
+    var othis = $(this), type = othis.data('type');
+    active[type] ? active[type].call(this, othis) : '';
+  });
+});
+</script>

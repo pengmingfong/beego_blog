@@ -28,6 +28,14 @@ func (this *IndexController) Index() {
 		list = append(list, row)
 	}
 
+	bannerresult, lens := models.BannerLists(1, 10)
+	bannerlist := make([]map[string]interface{}, lens)
+	for k, v := range bannerresult {
+		row := make(map[string]interface{})
+		row["image"] = v.Image
+		bannerlist[k] = row
+	}
+
 	indexresult, _ := models.IndexList(1)
 	prodlist := make([]map[string]interface{}, 0)
 	goldlist := make([]map[string]interface{}, 0)
@@ -112,6 +120,7 @@ func (this *IndexController) Index() {
 
 	this.Data["title"] = "首页"
 	this.Data["list"] = list
+	this.Data["bannerlist"] = bannerlist
 	this.Data["productarticle"] = prodlist
 	this.Data["goldlist"] = goldlist
 	this.Data["nationallist"] = nationallist

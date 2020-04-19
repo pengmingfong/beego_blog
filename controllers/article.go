@@ -15,8 +15,12 @@ func (a *ArticleController) Detail() {
 	a.getfooter()
 	id, _ := a.GetInt("id")
 	article, _ := models.ArticleById(id)
+
+	category, _ := models.CategoryGetById(article.Cid)
+
 	a.Data["title"] = article.Title
 	a.Data["content"] = article
+	a.Data["category"] = category
 	a.TplName = "home/detail.html"
 }
 
@@ -32,6 +36,24 @@ func (a *ArticleController) List() {
 	condition["cid"] = cid
 	condition["pagesize"] = cid
 	result, _ := models.ArticleByCids(page, pagesize, cid, condition)
+	// 查询同等级分类
+	// var ccid int
+	category, _ := models.CategoryGetById(cid)
+	if category.Pid == 0 {
+		cid = category.Id
+	} else {
+		cid = category.Pid
+	}
+
+	categorylist := models.CategoryBypid(cid)
+	categorymap := make([]map[string]interface{}, len(categorylist))
+
+	for k, v := range categorylist {
+		row := make(map[string]interface{})
+		row["id"] = v.Id
+		row["name"] = v.Name
+		categorymap[k] = row
+	}
 
 	list := make([]map[string]interface{}, len(result))
 
@@ -45,10 +67,20 @@ func (a *ArticleController) List() {
 
 	a.Data["cid"] = cid
 	a.Data["alist"] = list
+	a.Data["category"] = category
+	a.Data["categorymap"] = categorymap
 	a.TplName = "home/list.html"
 }
 
 func (a *ArticleController) getmenu() {
+	bannerresult, lens := models.BannerLists(1, 10)
+	bannerlist := make([]map[string]interface{}, lens)
+	for k, v := range bannerresult {
+		row := make(map[string]interface{})
+		row["image"] = v.Image
+		bannerlist[k] = row
+	}
+
 	result := models.CategoryList()
 	list := make([]map[string]interface{}, 0)
 	for _, v := range result {
@@ -66,6 +98,7 @@ func (a *ArticleController) getmenu() {
 		list = append(list, row)
 	}
 
+	a.Data["bannerlist"] = bannerlist
 	a.Data["list"] = list
 }
 

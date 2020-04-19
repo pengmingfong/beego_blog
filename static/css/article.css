@@ -57,7 +57,7 @@ display: block;
 }
 .list-title-left {
 	width:200px;
-	height:600px;
+/*	height:600px;*/
 	float:left;
 	padding-top:25px;
 }
@@ -71,6 +71,16 @@ display: block;
     background-image: url("/static/img/ni-menu-icon.gif");
     background-repeat: no-repeat;
     background-position: 42px center;
+}
+.list-title a{
+	color: #3f3f3f;
+    font-size: 16px;
+    font-family: "微软雅黑";
+}
+.list-title-left a{
+	color: #3f3f3f;
+    font-size: 16px;
+    font-family: "微软雅黑";
 }
 
 .list-title-left dl dt.selected {

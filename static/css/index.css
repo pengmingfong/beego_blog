@@ -86,28 +86,13 @@ color:#FFFFFF
 #banner{
             width: 1200px;/*图片大小*/
             height: 350px;
-            position: relative;
 			float:right;
         }
 #banner img {
 	width:1200px;
 	height:350px;
 }
-        #banner ul{
-            position: absolute;
-            left: 480px;
-            top: 210px;
-        }
-        #banner li{
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            font-size: 20px;
-            list-style: none;
-            float: left;
-            margin: 0px 10px;
-        }
+        
         /*鼠标移出样式*/
         .b_li_out{
             border: 1px solid orange;

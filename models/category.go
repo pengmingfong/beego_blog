@@ -28,6 +28,12 @@ func CategoryGetById(id int) (*Category, error) {
 	return c, nil
 }
 
+func CategoryBypid(pid int) []*Category {
+	list := make([]*Category, 0)
+	orm.NewOrm().QueryTable(TableName("category")).Filter("pid", pid).All(&list)
+	return list
+}
+
 func CategoryListParent() []*Category {
 	list := make([]*Category, 0)
 	orm.NewOrm().QueryTable(TableName("category")).Filter("pid", 0).All(&list)

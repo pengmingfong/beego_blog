@@ -1,23 +1,16 @@
 {{template "home/layout.html" .}}
 <div class="list-">
 <div class="list-title">
-当前位置：<a>关于我们</a>
+当前位置：<a href="list?cid={{.category.Id}}">{{.category.Name}}</a>
 </div>
 <div class="" style="float:left;width:1200px;height:620px;">
 <div class="list-title-left">
 <dl>
-  <dt>品牌门店</dt>
-<dt class="selected">产品中心</dt>
-<dt>国际新闻</dt>
-<dt>品牌概况</dt>
-<dt>品牌加盟</dt>
-<dt>新闻中心</dt>
-<dt>产品中心</dt>
-<dt>互动体验</dt>
-<dt>经销商专区</dt>
-<dt>工程案例</dt>
-<dt>设计师</dt>
-<dt>关于我们</dt>
+<!--  <dt>品牌门店</dt>
+<dt class="selected">产品中心</dt>-->
+{{range.categorymap}}
+<dt><a href="list?cid={{.id}}">{{.name}}</a></dt>
+{{end}}
 </ul>
 </div>
 <div class="list-title-right">
