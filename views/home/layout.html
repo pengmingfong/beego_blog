@@ -64,19 +64,29 @@ layui.use('element', function(){
   </li>
   {{end}}
 </ul>
-<!--<li><a href="/">首页</a></li>-->
-<!--{{range.list}}
-<li><a href="list?cid={{.id}}">{{.name}}</a></li>
-{{end}}-->
+
 </div>
 <div id="banner">
 <div class="layui-carousel" id="test1" lay-filter="test1">
   <div class="layui-carousel" id="test3" lay-filter="test4">
   <div carousel-item="">
-    
+  {{range.bannerlist}}
+  <div ><img src="{{.image}}" /></div>
+  {{end}}
   </div>
 </div> 
 </div> 
+<!--<div class="layui-carousel" id="test1" lay-filter="test1">
+  <div carousel-item="">
+    <div>条目1</div>
+    <div>条目2</div>
+    <div>条目3</div>
+    <div>条目4</div>
+    <div>条目5</div>
+  </div>
+</div> -->
+
+
 </div>
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <script>
@@ -109,7 +119,7 @@ layui.use(['carousel', 'form'], function(){
   carousel.render({
     elem: '#test10'
     ,width: '1200px'
-    ,height: '350px'
+    ,height: '500px'
     ,interval: 5000
   });
   
