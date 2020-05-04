@@ -101,6 +101,8 @@ func (a *ArticleController) EditOne() {
 	status, _ := a.GetInt("status")
 	index, _ := a.GetInt("index")
 	content := a.GetString("content")
+	tag := a.GetString("tag")
+	keyword := a.GetString("keyword")
 
 	article, _ := models.ArticleById(id)
 	article.Title = title
@@ -109,6 +111,8 @@ func (a *ArticleController) EditOne() {
 	article.Status = status
 	article.Index = index
 	article.Content = content
+	article.Tag = tag
+	article.Keyword = keyword
 	img = article.Image
 
 	// 获取上传文件
@@ -137,6 +141,8 @@ func (a *ArticleController) AddOne() {
 	status, _ := a.GetInt("status")
 	index, _ := a.GetInt("index")
 	content := a.GetString("content")
+	tag := a.GetString("tag")
+	keyword := a.GetString("keyword")
 
 	// 获取上传文件
 	f, h, err := a.GetFile("filename")
@@ -158,6 +164,8 @@ func (a *ArticleController) AddOne() {
 	article.Image = img
 	article.Created = time.Now().Format("2006-01-02 15:04:05")
 	article.Updated = time.Now().Format("2006-01-02 15:04:05")
+	article.Tag = tag
+	article.Keyword = keyword
 
 	id, err := models.Addarticle(article)
 	if err != nil || id == 0 {

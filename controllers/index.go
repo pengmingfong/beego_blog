@@ -25,7 +25,9 @@ func (this *IndexController) Index() {
 		row["level"] = v.Level
 		row["create_time"] = v.Created
 		row["update_time"] = v.Updated
+
 		list = append(list, row)
+
 	}
 
 	bannerresult, lens := models.BannerLists(1, 10)
@@ -118,7 +120,7 @@ func (this *IndexController) Index() {
 		continue
 	}
 
-	this.Data["title"] = "首页"
+	this.Data["title"] = "安徽黄金-打造黄金百年企业.谱写徽韵文化传奇"
 	this.Data["list"] = list
 	this.Data["bannerlist"] = bannerlist
 	this.Data["productarticle"] = prodlist

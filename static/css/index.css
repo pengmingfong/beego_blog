@@ -28,11 +28,11 @@ float: left;
 color: #9b7d5f;
 text-decoration: none;
 margin: 0px;
-padding-top: 8px;
+/*padding-top: 8px;*/
 display: block; /* 作为一个块 */
-padding-right: 50px; /* 设置块的属性 */
-padding-bottom: 8px;
-padding-left: 50px;
+padding-right: 35px; /* 设置块的属性 */
+/*padding-bottom: 8px;*/
+padding-left: 35px;
 }
 #menu li a:hover{
 background-color: #9b7d5f;
@@ -73,19 +73,30 @@ color:#FFFFFF
 	width:1200px;
 	height:75px;
 	float:left;
-	text-align: center;
     vertical-align:middle;
 }
 .logo img{
 	width:75px;
 	height:75px;
 }
+.logo span{
+	font-size:14px;
+	color:#9b7d5f;
+}
 .header{
 	width:1200px;heoght:50px;float:right
 }
+.layui-nav li a{
+	margin-left:19px;
+	margin-right:19px;
+/*width:30px;*/
+}
+.layui-nav span{
+	display:none;
+}
 #banner{
             width: 1200px;/*图片大小*/
-            height: 350px;
+            height: 500px;
 			float:right;
         }
 #banner img {

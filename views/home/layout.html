@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{.title}}</title>
+        {{if .title}}
+        <title>{{.title}}-打造黄金百年企业.谱写徽韵文化传奇</title>
+        {{if .content}}
+        <meta name="keyword" content="{{.content.Keyword}}">
+        {{else}}
+        <meta name="keyword" content="安徽黄金-打造黄金百年企业.谱写徽韵文化传奇">
+        {{end}}
+{{else}}
+<title>安徽黄金-打造黄金百年企业.谱写徽韵文化传奇</title>
+<meta name="keyword" content="安徽黄金-打造黄金百年企业.谱写徽韵文化传奇">
+{{end}}
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     </head>
 <link href="/static/css/index.css" rel="stylesheet">
 <link href="/static/css/article.css" rel="stylesheet">
 <link rel="stylesheet" href="/static/layui/css/layui.css"  media="all">
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
     <body>
   <div style="width:1200px;margin:auto">
 <div class="search" >
@@ -19,22 +46,34 @@
 	</div>
 <div class="logo" >
  <img src="static/img/20200415203535.png"/>
+  <span>安徽黄金-打造黄金百年企业.谱写徽韵文化传奇</span>
 </div>
-	<div class="header">
-<ul id="menu">
-<li><a href="/">首页</a></li>
-{{range.list}}
-<li><a href="list?cid={{.id}}">{{.name}}</a></li>
-{{end}}
+
+  
+  <div class="header">
+  <ul class="layui-nav" id="menu" style="padding:0px;background:white;">
+  <li class="layui-nav-item"><a href="/">首页</a></li>
+  {{range.list}}
+  <li class="layui-nav-item">
+    <a href="list?cid={{.id}}">{{.name}}</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">选项1</a></dd>
+      <dd><a href="">选项2</a></dd>
+      <dd><a href="">选项3</a></dd>
+    </dl>
+  </li>
+  {{end}}
 </ul>
+<!--<li><a href="/">首页</a></li>-->
+<!--{{range.list}}
+<li><a href="list?cid={{.id}}">{{.name}}</a></li>
+{{end}}-->
 </div>
 <div id="banner">
 <div class="layui-carousel" id="test1" lay-filter="test1">
   <div class="layui-carousel" id="test3" lay-filter="test4">
   <div carousel-item="">
-    {{range.bannerlist}}
-    <div><img  src="{{.image}}" /></div>
-    {{end}}
+    
   </div>
 </div> 
 </div> 
@@ -63,7 +102,7 @@ layui.use(['carousel', 'form'], function(){
   var ins3 = carousel.render({
     elem: '#test3'
   ,width: '1200px'
-    ,height: '350px'
+    ,height: '500px'
     ,interval: 5000
   });
   //图片轮播

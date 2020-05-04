@@ -14,6 +14,8 @@ type Article struct {
 	Small_title string
 	Image       string
 	Content     string
+	Tag         string
+	Keyword     string
 	Status      int
 	Index       int
 	Created     string

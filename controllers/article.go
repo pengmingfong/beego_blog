@@ -65,6 +65,7 @@ func (a *ArticleController) List() {
 		list[k] = row
 	}
 
+	a.Data["title"] = category.Name
 	a.Data["cid"] = cid
 	a.Data["alist"] = list
 	a.Data["category"] = category
