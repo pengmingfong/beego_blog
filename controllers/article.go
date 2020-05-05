@@ -82,25 +82,9 @@ func (a *ArticleController) getmenu() {
 		bannerlist[k] = row
 	}
 
-	result := models.CategoryList()
-	list := make([]map[string]interface{}, 0)
-	for _, v := range result {
-		if v.Pid != 0 || v.Index != 1 {
-			continue
-		}
-		row := make(map[string]interface{})
-		row["id"] = v.Id
-		row["name"] = v.Name
-		row["pid"] = v.Pid
-		row["status"] = v.Status
-		row["level"] = v.Level
-		row["create_time"] = v.Created
-		row["update_time"] = v.Updated
-		list = append(list, row)
-	}
-
+	categorys := models.GetChild(0)
 	a.Data["bannerlist"] = bannerlist
-	a.Data["list"] = list
+	a.Data["categorys"] = categorys
 }
 
 func (a *ArticleController) getfooter() {
