@@ -38,6 +38,8 @@ func (this *IndexController) Index() {
 		bannerlist[k] = row
 	}
 
+	categorys := models.GetChild(0)
+
 	indexresult, _ := models.IndexList(1)
 	prodlist := make([]map[string]interface{}, 0)
 	goldlist := make([]map[string]interface{}, 0)
@@ -120,6 +122,7 @@ func (this *IndexController) Index() {
 		continue
 	}
 
+	this.Data["categorys"] = categorys
 	this.Data["title"] = "安徽黄金-打造黄金百年企业.谱写徽韵文化传奇"
 	this.Data["list"] = list
 	this.Data["bannerlist"] = bannerlist

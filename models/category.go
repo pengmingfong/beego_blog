@@ -15,6 +15,13 @@ type Category struct {
 	Updated string
 }
 
+type TreeList struct {
+	Id       int         `json:"id"`
+	Name     string      `json:"name"`
+	Pid      int         `json:"pid"`
+	Children []*TreeList `json:"children"`
+}
+
 func (a *Category) TableName() string {
 	return TableName("category")
 }
@@ -83,4 +90,22 @@ func (r *Category) Update(fields ...string) error {
 		return err
 	}
 	return nil
+}
+
+func GetChild(pid int) []*TreeList {
+	o := orm.NewOrm()
+	var menu []Category
+	_, _ = o.QueryTable(TableName("category")).Filter("pid", pid).OrderBy("level").All(&menu)
+	treeList := []*TreeList{}
+	for _, v := range menu {
+		child := GetChild(v.Id)
+		node := &TreeList{
+			Id:   v.Id,
+			Name: v.Name,
+			Pid:  v.Pid,
+		}
+		node.Children = child
+		treeList = append(treeList, node)
+	}
+	return treeList
 }

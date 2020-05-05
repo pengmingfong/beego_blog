@@ -31,7 +31,10 @@
   <hr  class="news-top-right"/>
 </div>
 <div class="news-left">
-<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586606191242&di=035347cd61ceea12880d79511206a1b4&imgtype=0&src=http%3A%2F%2Fres.dyhjw.com%2Fueditor%2Fphp%2Fupload%2Fimage%2F20161103%2F1478137180739523.png"/>
+<a href="javascript:;" class="guonei" style="background:#9b7d5f;color:white;padding:5px;margin-left:20px;">国内金价</a>
+<a href="javascript:;" class="guoji" style="background:#9b7d5f;color:white;padding:5px;">国际金价</a>
+<img style="" class="guonei-img"src="http://webquotepic.eastmoney.com/GetPic.aspx?id=aum1&imageType=rf&token=44c9d251add88e27b65ed86506f6e5da"/>
+<img style="display:none" class="guoji-img" src="http://webquotepic.eastmoney.com/GetPic.aspx?token=44c9d251add88e27b65ed86506f6e5da&nid=101.GC00Y&type=r&imageType=rf&_=1588673650634"/>
 </div>
 <div class="news-right">
   <p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2423097242,239184669&fm=26&gp=0.jpg" />黄金头条<a href="/list?cid=9">更多</a></p>
@@ -68,5 +71,14 @@
 </div>
 </div>
 
-
+<script>
+$(".guonei").click(function(){
+  $(".guonei-img").attr("style","")
+  $(".guoji-img").attr("style","display:none")
+});
+$(".guoji").click(function(){
+  $(".guonei-img").attr("style","display:none")
+  $(".guoji-img").attr("style","")
+});
+</script>
 {{template "home/footer.html" .}}

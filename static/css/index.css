@@ -251,19 +251,19 @@ margin-top:24px;
 	float:left;
 }
 .news-left {
-	width:400px;
+	width:600px;
 	height:300px;	
 	float:left;
-background:#FFDAB9;
 }
 .news-left img {
-	width:400px;
-	height:300px;
+	margin-top:5px;
+	width:578px;
+	height:276px;
 float:left;	
 }
 
 .news-right {
-	width:400px;
+	width:300px;
 	height:300px;	
 	float:left;
 }
@@ -271,12 +271,12 @@ float:left;
 	padding-top:20px;
 }
 .news-right ul li {
-	padding-left:80px;
+	padding-left:30px;
 height:25px;
 font-size:12px;
 }
 .news-right p{
-	padding-left:80px;
+	padding-left:30px;
 font-weight:bold;
 }
 .news-right p a{
