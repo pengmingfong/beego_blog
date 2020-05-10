@@ -62,8 +62,8 @@
 <p class="dongtai-title">企业动态1</p>
 {{range.dongtai}}
 <div class="dongtai-list">
-<img src="{{.image}}"/>
-<p>{{.title}}</p>
+<a href="/detail?id={{.id}}"><img src="{{.image}}"/></a>
+<a href="/detail?id={{.id}}"><p>{{.title}}</p></a>
 </div>
 {{end}}
 <!--<a href="/detail?id=44">
