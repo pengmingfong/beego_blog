@@ -15,7 +15,7 @@
 </div>  
 </div>
 
-<!--<div id="aboutus">
+<div id="aboutus">
 <img class="aboutus-leftimg" src="/static/img/7b5195593a7441350ac0ca252cd78ef.jpg">
 <div class="aboutus-right">
   <img src="/static/img/about.png">
@@ -25,7 +25,7 @@
 
         <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品牌发展至今已经覆盖国内大部分市场，拥有数量庞大的直营、加盟品牌零售店，同时也为全国客户提供一站式全品类黄金钻石珠宝采购批发销售服务。</p>
 </div>
-</div>-->
+</div>
 
 <!--<div id="news">
 <div class="news-top">
@@ -59,7 +59,14 @@
 </div>-->
 
 <div id="dongtai" style="margin-bottom:50px;">
-<a href="/detail?id=44">
+<p class="dongtai-title">企业动态1</p>
+{{range.dongtai}}
+<div class="dongtai-list">
+<img src="{{.image}}"/>
+<p>{{.title}}</p>
+</div>
+{{end}}
+<!--<a href="/detail?id=44">
 <div class="dongtai-list" style="width:400px;border:solid 1px #79797b;margin-right:20px;">
   
   <h3 style="" class="mini-title">
@@ -97,7 +104,7 @@
     <dd>为消费者奉献无所超值的产品及服务</dd>
   </dl>
 </div>
-</a>
+</a>-->
 </div>
 
 <script>

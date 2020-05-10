@@ -51,6 +51,7 @@ func (this *IndexController) Index() {
 	cases := make([]map[string]interface{}, 0)
 	designer := make([]map[string]interface{}, 0)
 	aboutus := make([]map[string]interface{}, 0)
+	dongtai := make([]map[string]interface{}, 0)
 
 	for _, v := range indexresult {
 		row := make(map[string]interface{})
@@ -66,6 +67,13 @@ func (this *IndexController) Index() {
 				continue
 			}
 			prodlist = append(prodlist, row)
+			// dongtai = append(dongtai, row)
+		} else if v.Cid == 32 {
+			// 黄金头条
+			if len(dongtai) >= 3 {
+				continue
+			}
+			dongtai = append(dongtai, row)
 		} else if v.Cid == 9 {
 			// 黄金头条
 			if len(goldlist) >= 10 {
@@ -136,5 +144,6 @@ func (this *IndexController) Index() {
 	this.Data["cases"] = cases
 	this.Data["designer"] = designer
 	this.Data["aboutus"] = aboutus
+	this.Data["dongtai"] = dongtai
 	this.TplName = "home/index.html"
 }

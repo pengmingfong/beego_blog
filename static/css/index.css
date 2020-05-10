@@ -145,7 +145,7 @@ color:#FFFFFF
 	width:387px;
 	height:325px;
 	float:left;
-	margin-right:20px;
+	margin-right:14px;
 margin-bottom:20px;
 position: relative;
 border: solid 2px #79797b;
@@ -311,16 +311,16 @@ a {
 #dongtai{
 
 	width:1200px;
-	height:350px;
+	height:300px;
 float:right;
 margin-top:20px;
 }
 .dongtai-list{
-	width:300px;
-	height:350px;
+	width:380px;
+	height:300px;
 	float:left;
 	
-padding-right:30px;
+padding-right:20px;
 }
 
 .dongtai-title{
@@ -343,7 +343,7 @@ padding-top:50px;
 .footer-bottom {
 	width:1150px;
 	float:left;
-height:50px;
+height:25px;
 }
 .footer-bottom a{
 	font-size:12px;
@@ -402,7 +402,19 @@ font-size:12px;
 	padding-left:20px;
 	padding-right:20px;
 }
-
+.dongtai-list img{
+	width: 350px;
+	margin: 0 auto;
+	height: 230px;
+	margin-left: 15px;
+}
+.dongtai-list p {
+	font-size: 18px;
+	text-align: center;
+	line-height: 25px;
+	margin-top: 10px;
+	color: #909090;
+}
 .mini-people {
 	width: 200px;
 	height: 150px;
@@ -429,7 +441,7 @@ font-size:12px;
 }
 #footer{
 	width:1150px;
-	height:80px;
+	height:220px;
 	float:right;
 	background:#6d6e72;
 	padding-left:50px;
