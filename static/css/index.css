@@ -176,7 +176,8 @@ float:left;
 		width:347px;
 padding-left:20px;
 padding-right:20px;
-
+	height: 48px;
+	text-overflow:ellipsis;overflow:hidden;
 }
 .product-list-border {
 	float:left;

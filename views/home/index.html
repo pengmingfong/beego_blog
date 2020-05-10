@@ -5,9 +5,9 @@
   <ul>
 {{range.productarticle}}
 <li style="border-bottom-width: 2px">
-<img src="{{.image}}" />
+<a href="/detail?id={{.id}}"><img src="{{.image}}" /></a>
 <a href="/detail?id={{.id}}"><p class="product-list-title">{{.title}}</p></a>
-<!--<p class="product-list-desc">{{.sub_title}}</p>-->
+<p class="product-list-desc">{{.sub_title}}{{.sub_title}}</p>
 <a href="/list?cid={{.cid}}"><p class="product-list-border">进入产品系列</p></a>
 </li>
 {{end}}
