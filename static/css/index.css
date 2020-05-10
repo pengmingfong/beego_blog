@@ -25,7 +25,7 @@ border-right-style: solid;
 float: left;
 }
 #menu li a{
-color: #9b7d5f;
+color: white;
 text-decoration: none;
 margin: 0px;
 /*padding-top: 8px;*/
@@ -34,9 +34,19 @@ padding-right: 35px; /* 设置块的属性 */
 /*padding-bottom: 8px;*/
 padding-left: 35px;
 }
+
 #menu li a:hover{
-background-color: #9b7d5f;
+background:#9b7d5f;
 color:#FFFFFF
+}
+#menu li dl a{
+	color: #9b7d5f;
+}
+.layui-nav-item dl{
+	color:#9b7d5f;
+}
+.layui-nav-child dl:hover {
+	color:#FFFFFF
 }
 #header {
   
@@ -76,15 +86,14 @@ color:#FFFFFF
     vertical-align:middle;
 }
 .logo img{
-	width:75px;
-	height:75px;
+	
 }
 .logo span{
 	font-size:14px;
 	color:#9b7d5f;
 }
 .header{
-	width:1200px;heoght:50px;float:right
+	width:100%;heoght:50px;float:right;background:#9b7d5f;
 }
 .layui-nav li a{
 	margin-left:19px;
@@ -124,7 +133,7 @@ color:#FFFFFF
 }
 .product-list {
 	width:1200px;
-	height:750px;
+	height:720px;
 	flaot:left;
 }
 .product-list ul{
@@ -210,7 +219,7 @@ float:right;
 .aboutus-right p {
 	font-size:15px;
 	color:#909090;
-	line-height:22px;
+	line-height:28px;
 	padding-top:20px;
 }
 #news{
@@ -302,33 +311,18 @@ a {
 #dongtai{
 
 	width:1200px;
-	height:330px;
+	height:350px;
 float:right;
+margin-top:20px;
 }
 .dongtai-list{
 	width:300px;
-	height:250px;
+	height:350px;
 	float:left;
-	padding-left:50px;
-padding-right:50px;
+	
+padding-right:30px;
 }
-.dongtai-list img{
-	width:300px;
-	height:220px;
-}
-.dongtai-list p {
-	font-size:16px;
-line-height:30px;
-text-align:center;
-color:#717576
-}
-#footer{
-	width:1150px;
-	height:230px;
-float:right;
-background:#6d6e72;
-padding-left:50px;
-}
+
 .dongtai-title{
 	
 	line-height:50px;
@@ -387,4 +381,61 @@ font-size:12px;
 .footer-right-first{
 	padding-bottom:10px;
 
+}
+.mini-title {
+	background-image: url("/static/img/81bfea48f7b8a3d1ba7b90e8d0edd8d.png");
+	margin-bottom:20px;
+	color:#9b7d5f;
+	height:30px;
+	line-height:30px;
+}
+.mini-img {
+	width:30px;
+	height:30px;
+}
+.dongtai-list dl dd  {
+	width:100%;
+	color:#9b7d5f;
+	line-height:28px;
+	font-size:14px;
+	font-weight:bold;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.mini-people {
+	width: 200px;
+	height: 150px;
+	margin: 5px 20px 20px 20px;
+	float: left;
+	background-image:url('/static/img/gscsr.png')
+}
+.mini-p{
+	float: right;
+	line-height: 23px;
+	color: #9b7d5f;
+	width: 160px;
+	font-size:14px;
+	font-weight: bold;
+}
+.mini-t {
+	font-size:18px;
+	font-weight: bold;
+	color: #9b7d5f;
+	width: 90px;
+	margin-left: 80px;
+	text-align: center;
+	line-height: 35px;
+}
+#footer{
+	width:1150px;
+	height:80px;
+	float:right;
+	background:#6d6e72;
+	padding-left:50px;
+}
+#footer p {
+	color: white;
+	text-align: center;
+	line-height: 23px;
 }

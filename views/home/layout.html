@@ -35,7 +35,8 @@ layui.use('element', function(){
   });
 });
 </script>
-    <body>
+    <body style="width:100%;">
+    <div style="width:100%;margin:auto">
   <div style="width:1200px;margin:auto">
 <div class="search" >
 		<form action="/site/search" method="get">
@@ -48,9 +49,9 @@ layui.use('element', function(){
  <img src="static/img/20200415203535.png"/>
   <span>安徽黄金-打造黄金百年企业.谱写徽韵文化传奇</span>
 </div>
-
+</div>
   <div class="header">
-  <ul class="layui-nav" id="menu" style="padding:0px;background:white;">
+  <ul class="layui-nav" id="menu" style="padding:0px;background:#9b7d5f;">
   <li class="layui-nav-item"><a href="/">首页</a></li>
   {{range.categorys}}
   <li class="layui-nav-item">
@@ -67,6 +68,7 @@ layui.use('element', function(){
 </ul>
 
 </div>
+<div style="width:1200px;margin:auto">
 <div id="banner">
 <div class="layui-carousel" id="test1" lay-filter="test1">
   <div class="layui-carousel" id="test3" lay-filter="test4">
@@ -77,17 +79,6 @@ layui.use('element', function(){
   </div>
 </div> 
 </div> 
-<!--<div class="layui-carousel" id="test1" lay-filter="test1">
-  <div carousel-item="">
-    <div>条目1</div>
-    <div>条目2</div>
-    <div>条目3</div>
-    <div>条目4</div>
-    <div>条目5</div>
-  </div>
-</div> -->
-
-
 </div>
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <script>
