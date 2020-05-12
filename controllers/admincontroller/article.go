@@ -103,6 +103,7 @@ func (a *ArticleController) EditOne() {
 	content := a.GetString("content")
 	tag := a.GetString("tag")
 	keyword := a.GetString("keyword")
+	desc := a.GetString("desc")
 
 	article, _ := models.ArticleById(id)
 	article.Title = title
@@ -113,6 +114,7 @@ func (a *ArticleController) EditOne() {
 	article.Content = content
 	article.Tag = tag
 	article.Keyword = keyword
+	article.Desc = desc
 	img = article.Image
 
 	// 获取上传文件
@@ -143,6 +145,7 @@ func (a *ArticleController) AddOne() {
 	content := a.GetString("content")
 	tag := a.GetString("tag")
 	keyword := a.GetString("keyword")
+	desc := a.GetString("desc")
 
 	// 获取上传文件
 	f, h, err := a.GetFile("filename")
@@ -166,6 +169,7 @@ func (a *ArticleController) AddOne() {
 	article.Updated = time.Now().Format("2006-01-02 15:04:05")
 	article.Tag = tag
 	article.Keyword = keyword
+	article.Desc = desc
 
 	id, err := models.Addarticle(article)
 	if err != nil || id == 0 {

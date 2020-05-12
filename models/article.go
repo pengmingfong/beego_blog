@@ -16,6 +16,7 @@ type Article struct {
 	Content     string
 	Tag         string
 	Keyword     string
+	Desc        string
 	Status      int
 	Index       int
 	Created     string
@@ -55,7 +56,7 @@ func ArticleByCids(page, pagesize, cid int, condition interface{}) ([]*Article, 
 
 func IndexList(page int) ([]*Article, int64) {
 	list := make([]*Article, 0)
-	query := orm.NewOrm().QueryTable(TableName("article")).Filter("index", 1).Filter("status", 1)
+	query := orm.NewOrm().QueryTable(TableName("article")).Filter("status", 1)
 	total, _ := query.Count()
 	query.OrderBy("-id").All(&list)
 

@@ -3,12 +3,15 @@
 <h1>PRODUCTS|产品鉴赏</h1>
 <div class="product-list">
   <ul>
-{{range.productarticle}}
+{{range $index, $elem := .productarticle}}
 <li style="border-bottom-width: 2px">
-<a href="/detail?id={{.id}}"><img src="{{.image}}" /></a>
-<a href="/detail?id={{.id}}"><p class="product-list-title">{{.title}}</p></a>
-<p class="product-list-desc">{{.sub_title}}{{.sub_title}}</p>
-<a href="/list?cid={{.cid}}"><p class="product-list-border">进入产品系列</p></a>
+
+<a href="/detail?id={{$elem.id}}" class="{{if eq $index 1}}list-none{{end}}{{if eq $index 3}}list-none{{end}}{{if eq $index 5}}list-none{{end}}"><img src="{{$elem.image}}" /></a>
+<a href="/detail?id={{$elem.id}}"><p class="product-list-title" style="font-weight:bold;"> {{$elem.title}}</p></a>
+<a href="/detail?id={{$elem.id}}"><p class="product-list-stitle">{{$elem.desc}}</p></a>
+<p class="product-list-desc">{{$elem.sub_title}}</p>
+<a href="/list?cid={{$elem.cid}}"><p class="product-list-border">{{$elem.indexs}}进入产品系列</p></a>
+<a href="/detail?id={{$elem.id}}" class="{{if eq $index 0}}list-none{{end}}{{if eq $index 2}}list-none{{end}}{{if eq $index 4}}list-none{{end}}"><img src="{{$elem.image}}" /></a>
 </li>
 {{end}}
   </ul>
@@ -59,7 +62,7 @@
 </div>-->
 
 <div id="dongtai" style="margin-bottom:50px;">
-<p class="dongtai-title">企业动态1</p>
+<p class="dongtai-title">企业动态</p>
 {{range.dongtai}}
 <div class="dongtai-list">
 <a href="/detail?id={{.id}}"><img src="{{.image}}"/></a>

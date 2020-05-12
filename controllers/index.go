@@ -61,72 +61,22 @@ func (this *IndexController) Index() {
 		row["image"] = v.Image
 		row["title"] = v.Title
 		row["sub_title"] = v.Sub_title
-		if v.Cid == 4 {
+		row["desc"] = v.Desc
+		row["indexs"] = v.Index
+		if v.Index == 1 && v.Image != "" {
 			// 产品鉴赏文章
 			if len(prodlist) >= 6 {
 				continue
 			}
+
 			prodlist = append(prodlist, row)
 			// dongtai = append(dongtai, row)
-		} else if v.Cid == 32 {
-			// 黄金头条
+		} else if v.Index == 2 && v.Image != "" {
 			if len(dongtai) >= 3 {
 				continue
 			}
 			dongtai = append(dongtai, row)
-		} else if v.Cid == 9 {
-			// 黄金头条
-			if len(goldlist) >= 10 {
-				continue
-			}
-			goldlist = append(goldlist, row)
-		} else if v.Cid == 10 {
-			// 国际新闻
-			if len(nationallist) >= 10 {
-				continue
-			}
-			nationallist = append(nationallist, row)
-		} else if v.Cid == 11 {
-			// 新闻专区
-			if len(newsspecial) >= 6 {
-				continue
-			}
-			newsspecial = append(newsspecial, row)
-		} else if v.Cid == 12 {
-			// 产品中心
-			if len(prodcenter) >= 6 {
-				continue
-			}
-			prodcenter = append(prodcenter, row)
-		} else if v.Cid == 13 {
-			// 互动体验
-			if len(interact) >= 6 {
-				continue
-			}
-			interact = append(interact, row)
-		} else if v.Cid == 14 {
-			// 经销商专区
-			if len(distributor) >= 6 {
-				continue
-			}
-			distributor = append(distributor, row)
-		} else if v.Cid == 15 {
-			if len(cases) >= 6 {
-				continue
-			}
-			cases = append(cases, row)
-		} else if v.Cid == 16 {
-			if len(designer) >= 6 {
-				continue
-			}
-			designer = append(designer, row)
-		} else if v.Cid == 17 {
-			if len(aboutus) >= 6 {
-				continue
-			}
-			aboutus = append(aboutus, row)
 		}
-
 		continue
 	}
 
