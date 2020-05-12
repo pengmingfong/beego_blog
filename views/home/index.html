@@ -10,7 +10,7 @@
 <a href="/detail?id={{$elem.id}}"><p class="product-list-title" style="font-weight:bold;"> {{$elem.title}}</p></a>
 <a href="/detail?id={{$elem.id}}"><p class="product-list-stitle">{{$elem.desc}}</p></a>
 <p class="product-list-desc">{{$elem.sub_title}}</p>
-<a href="/list?cid={{$elem.cid}}"><p class="product-list-border">{{$elem.indexs}}进入产品系列</p></a>
+<a href="/list?cid={{$elem.cid}}"><p class="product-list-border">进入产品系列</p></a>
 <a href="/detail?id={{$elem.id}}" class="{{if eq $index 0}}list-none{{end}}{{if eq $index 2}}list-none{{end}}{{if eq $index 4}}list-none{{end}}"><img src="{{$elem.image}}" /></a>
 </li>
 {{end}}
