@@ -46,18 +46,18 @@ layui.use('element', function(){
 		
 	</div>
 <div class="logo" >
- <img src="static/img/20200415203535.png"/>
+ <a href="/"><img src="static/img/20200415203535.png"/></a>
   <span>安徽黄金-打造黄金百年企业.谱写徽韵文化传奇</span>
 </div>
 </div>
   <div class="header">
-  <ul class="layui-nav" id="menu" style="padding:0px;background:#9b7d5f;width:1200px;margin:0 auto;">
+  <ul class="layui-nav" id="menu" style="padding:0px;background:#9b7d5f;width:100%;margin:0 auto;">
   <li class="layui-nav-item"><a href="/">首页</a></li>
   {{range.categorys}}
   <li class="layui-nav-item">
     <a href="list?cid={{.Id}}">{{.Name}}</a>
     {{if .Children}}
-    <dl class="layui-nav-child">
+    <dl class="layui-nav-child" style="border-radius:0px">
       {{range.Children}}
       <dd><a href="list?cid={{.Id}}">{{.Name}}</a></dd>
       {{end}}

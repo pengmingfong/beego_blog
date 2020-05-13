@@ -40,10 +40,10 @@ background:#e9d1b5;
 color:#FFFFFF
 }
 #menu li dl a{
-	color: #9b7d5f;
+	color: white;
 }
 .layui-nav-item dl{
-	color:#9b7d5f;
+	background: #9b7d5f;
 }
 .layui-nav-child dl:hover {
 	color:#FFFFFF
@@ -298,6 +298,8 @@ float:left;
 	padding-left:30px;
 height:25px;
 font-size:12px;
+	line-height: 25px;
+
 }
 .news-right p{
 	padding-left:30px;
@@ -319,6 +321,8 @@ padding-right:5px;
 	font-size:10px;
 	color:#717576;
 	text-decoration:none;
+	float: left;
+	height: 25px;
 }
 a {
 	text-decoration:none;
@@ -418,10 +422,9 @@ font-size:12px;
 	padding-right:20px;
 }
 .dongtai-list img{
-	width: 350px;
+	width: 380px;
 	margin: 0 auto;
 	height: 230px;
-	margin-left: 15px;
 }
 .dongtai-list p {
 	font-size: 18px;
