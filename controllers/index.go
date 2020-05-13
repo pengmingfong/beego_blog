@@ -77,12 +77,12 @@ func (this *IndexController) Index() {
 			}
 			dongtai = append(dongtai, row)
 		} else if v.Cid == 52 && v.Status == 1 {
-			if len(goldlist) >= 8 {
+			if len(goldlist) >= 10 {
 				continue
 			}
 			goldlist = append(goldlist, row)
 		} else if v.Cid == 53 && v.Status == 1 {
-			if len(nationallist) >= 3 {
+			if len(nationallist) >= 10 {
 				continue
 			}
 			nationallist = append(nationallist, row)
