@@ -71,21 +71,11 @@ func (this *IndexController) Index() {
 
 			prodlist = append(prodlist, row)
 			// dongtai = append(dongtai, row)
-		} else if v.Index == 2 && v.Image != "" {
-			if len(dongtai) >= 3 {
-				continue
-			}
-			dongtai = append(dongtai, row)
 		} else if v.Cid == 52 && v.Status == 1 {
-			if len(goldlist) >= 10 {
+			if len(goldlist) >= 3 {
 				continue
 			}
 			goldlist = append(goldlist, row)
-		} else if v.Cid == 53 && v.Status == 1 {
-			if len(nationallist) >= 10 {
-				continue
-			}
-			nationallist = append(nationallist, row)
 		}
 		continue
 	}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="background:black">
     <head>
         {{if .title}}
         <title>{{.title}}-打造黄金百年企业.谱写徽韵文化传奇</title>
@@ -35,23 +35,16 @@ layui.use('element', function(){
   });
 });
 </script>
-    <body style="width:100%;">
+    <body style="width:100%;height:100%;">
     <div style="">
-  <div style="width:1200px;margin:auto">
-<div class="search" >
-		<form action="/site/search" method="get">
-			<input type="submit" value="搜索">
-			<input type="text" class="keyword" name="keyword">
-		</form>
-		
-	</div>
+  <div style="width:1200px;margin:auto;">
 <div class="logo" >
  <a href="/"><img src="static/img/20200415203535.png"/></a>
   <span>安徽黄金-打造黄金百年企业.谱写徽韵文化传奇</span>
 </div>
 </div>
   <div class="header">
-  <ul class="layui-nav" id="menu" style="padding:0px;background:#9b7d5f;width:100%;margin:0 auto;">
+  <ul class="layui-nav" id="menu" style="padding:0px;background:#9b7d5f;width:100%;margin:0 auto;float:left">
   <li class="layui-nav-item"><a href="/">首页</a></li>
   {{range.categorys}}
   <li class="layui-nav-item">
@@ -68,7 +61,7 @@ layui.use('element', function(){
 </ul>
 
 </div>
-<div style="width:1200px;margin:auto">
+<div style="width:100%;margin:auto;height:100%;">
 <div id="banner">
 <div class="layui-carousel" id="test1" lay-filter="test1">
   <div class="layui-carousel" id="test3" lay-filter="test4">
@@ -78,10 +71,18 @@ layui.use('element', function(){
   {{end}}
   </div>
 </div> 
+<br style='clear:both'/>
 </div> 
+
 </div>
+<div style="width:1200px;margin:auto">
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <script>
+var w_height = $(window).height()
+var set_height = w_height * 0.6
+console.log(w_height)
+console.log(set_height)
+$('#banner').attr('style',"height:" + set_height + "px")
 layui.use(['carousel', 'form'], function(){
   var carousel = layui.carousel
   ,form = layui.form;
@@ -90,28 +91,15 @@ layui.use(['carousel', 'form'], function(){
   carousel.render({
     elem: '#test1'
     ,arrow: 'always'
-  });
-  
-  //改变下时间间隔、动画类型、高度
-  carousel.render({
-    elem: '#test2'
-    ,interval: 1800
-    ,anim: 'fade'
-    ,height: '120px'
+    ,width: '100%'
+    ,height:'100%'
   });
   
   //设定各种参数
   var ins3 = carousel.render({
     elem: '#test3'
-  ,width: '1200px'
-    ,height: '500px'
-    ,interval: 5000
-  });
-  //图片轮播
-  carousel.render({
-    elem: '#test10'
-    ,width: '1200px'
-    ,height: '500px'
+  ,width: '100%'
+    ,height: '100%'
     ,interval: 5000
   });
   

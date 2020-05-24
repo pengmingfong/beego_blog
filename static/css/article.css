@@ -3,6 +3,7 @@
 	padding-left:50px;
 padding-right:50px;
 	float:left;
+	background: white;
 }
 
 .detail-category {
@@ -24,6 +25,7 @@ padding-right:50px;
     font-size: 20px;
     text-align: center;
 	line-height:70px;
+	color: #9b7d5f;
 }
 
 .detail-line{
@@ -38,6 +40,7 @@ display: block;
 .detail-content {
 	margin-top:20px;
 	margin-bottom:20px;
+	background: white;
 }
 .detail-time p {
 	font-size:13px;
@@ -46,6 +49,7 @@ display: block;
 .list- {
 	width:1200px;
 	flaot:left;
+	background: white;
 }
 .list-title {
 	height:70px;
@@ -95,6 +99,12 @@ display: block;
 	width:950px;
 	height:575px;
 	float:left;
+}
+.list-title {
+	color: #9b7d5f;
+}
+.list-title a {
+	color: #9b7d5f;
 }
 
 .list-title-content ul li {
