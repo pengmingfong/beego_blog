@@ -10,6 +10,14 @@
 <div class="detail-time">
  <p>发布时间:{{.content.Created}}</p>
 </div>
-<div class="detail-content">{{str2html .content.Content}}</div>
+<div class="detail-content">
+{{str2html .content.Content}}
+
 </div>
+</div>
+<div style="clear:both"></div>
+<script>
+$(".html").attr("style","background:#e9d1b5")
+
+</script>
 {{template "home/footer.html" .}}

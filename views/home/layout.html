@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background:black">
+<html style="background:black" class="html">
     <head>
         {{if .title}}
         <title>{{.title}}-打造黄金百年企业.谱写徽韵文化传奇</title>
@@ -40,7 +40,7 @@ layui.use('element', function(){
   <div style="width:1200px;margin:auto;">
 <div class="logo" >
  <a href="/"><img src="static/img/20200415203535.png"/></a>
-  <span>安徽黄金-打造黄金百年企业.谱写徽韵文化传奇</span>
+  <span></span>
 </div>
 </div>
   <div class="header">
@@ -78,11 +78,7 @@ layui.use('element', function(){
 <div style="width:1200px;margin:auto">
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <script>
-var w_height = $(window).height()
-var set_height = w_height * 0.6
-console.log(w_height)
-console.log(set_height)
-$('#banner').attr('style',"height:" + set_height + "px")
+
 layui.use(['carousel', 'form'], function(){
   var carousel = layui.carousel
   ,form = layui.form;
@@ -92,14 +88,14 @@ layui.use(['carousel', 'form'], function(){
     elem: '#test1'
     ,arrow: 'always'
     ,width: '100%'
-    ,height:'100%'
+    ,height:'540px'
   });
   
   //设定各种参数
   var ins3 = carousel.render({
     elem: '#test3'
   ,width: '100%'
-    ,height: '100%'
+    ,height: '540px'
     ,interval: 5000
   });
   
