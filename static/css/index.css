@@ -104,6 +104,16 @@ background:#e9d1b5;
 		width:1200px;
 	}
 }
+html{
+	width:100%;float:right;background:#9b7d5f;
+}
+@media screen and (max-width: 1200px)
+{
+	html { width:1200px; }
+	body{
+		width:1200px;
+	}
+}
 .layui-nav li a{
 	margin-left:19px;
 	margin-right:19px;
@@ -516,6 +526,7 @@ font-size:12px;
 	height: 150px;
 	margin-left: 20px;
 	margin-right: 20px;
+	margin-bottom: 10px;
 }
 .dianmian {
 	background-image:url('/static/img/2.jpg');
@@ -535,17 +546,17 @@ font-size:12px;
 	font-size:18px;
 	font-weight: bold;
 	color: #9b7d5f;
-	width: 90px;
-	margin-left: 80px;
+	width: 140px;
+	margin-left: 60px;
 	text-align: center;
 	line-height: 35px;
-	padding-top: 20px;
+	padding-top: 80px;
 }
 #footer{
 	width:1202px;
 	height:120px;
 	float:right;
-	background:#6d6e72;
+	background:#917050;
 	margin-top: 30px;
 }
 #footer p {
