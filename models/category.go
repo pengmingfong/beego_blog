@@ -98,6 +98,10 @@ func GetChild(pid int) []*TreeList {
 	_, _ = o.QueryTable(TableName("category")).Filter("pid", pid).OrderBy("level").All(&menu)
 	treeList := []*TreeList{}
 	for _, v := range menu {
+		if v.Index == 0 {
+			continue
+		}
+
 		child := GetChild(v.Id)
 		node := &TreeList{
 			Id:   v.Id,
