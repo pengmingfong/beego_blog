@@ -15,7 +15,7 @@ font-size: 16px;
 font-weight: bolder;
  display: flex;
 flex-flow: row nowrap;
-justify-content: center;
+/*justify-content: center;*/
 }
 #menu li{
 list-style-image: none;
@@ -23,6 +23,7 @@ list-style-type: none;
 border-right-width: 0px;
 border-right-style: solid;
 float: left;
+	text-align : left;
 }
 #menu li a{
 color: #FFFFFF;
@@ -33,7 +34,7 @@ display: block; /* 作为一个块 */
 padding-right: 15px; /* 设置块的属性 */
 /*padding-bottom: 8px;*/
 padding-left: 15px;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 #menu li a:hover{
@@ -52,6 +53,11 @@ background:#e9d1b5;
 }
 #header {
   
+}
+.ul_header{
+	height: 60px;
+	width: 1200px;
+	margin: auto;
 }
 .search {
 	width:1200px;
@@ -434,6 +440,7 @@ margin-top:20px;
 	width:250px;
 	float:left;
 	padding-left: 200px;
+	margin: 0 auto;
 }
 .footer-right {
 	width:900px;
@@ -555,8 +562,14 @@ font-size:12px;
 #footer{
 	width:1202px;
 	height:120px;
-	float:right;
 	background:#917050;
+	margin: 0 auto;
+}
+#footer1 {
+	width: 100%;
+	height: 120px;
+	float: left;
+	background: #917050;
 	margin-top: 30px;
 }
 #footer p {
@@ -571,4 +584,26 @@ font-size:12px;
 .footer-a {
 	float: left;
 	padding-top: 40px;
+}
+.search_input {
+	outline: none;
+	border-radius: 0px;
+	border: 1px solid #DFDFDF;
+	height: 25px;
+	line-height: 25px;
+	padding: 0px 5px;
+	float: left;
+	background: white;
+	margin-top: 18px;
+}
+.search_but {
+	height: 27px;
+	line-height: 27px;
+	width: 70px;
+	text-align: center;
+	background: white;
+	border: 0px;
+	color: #9b7d5f;
+	margin-top: 18px;
+	float: right;
 }
