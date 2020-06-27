@@ -85,6 +85,7 @@ func (a *ArticleController) getmenu() {
 	categorys := models.GetChild(0)
 	a.Data["bannerlist"] = bannerlist
 	a.Data["categorys"] = categorys
+	a.Data["view"] = 2
 }
 
 func (a *ArticleController) getfooter() {

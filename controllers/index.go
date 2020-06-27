@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"gold/models"
+	"time"
 
 	"github.com/astaxie/beego"
 )
@@ -63,6 +64,7 @@ func (this *IndexController) Index() {
 		row["sub_title"] = v.Sub_title
 		row["desc"] = v.Desc
 		row["indexs"] = v.Index
+
 		if v.Index == 1 && v.Image != "" {
 			// 产品鉴赏文章
 			if len(prodlist) >= 6 {
@@ -153,6 +155,7 @@ func (this *IndexController) Index1() {
 		row["sub_title"] = v.Sub_title
 		row["desc"] = v.Desc
 		row["indexs"] = v.Index
+		row["created"] = time.Now().Format("2006-01")
 		if v.Index == 1 && v.Image != "" {
 			// 产品鉴赏文章
 			if len(prodlist) >= 6 {

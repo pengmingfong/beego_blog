@@ -5,7 +5,6 @@
 <div class="dongtai-list" style="width:454px;padding-right:0px;">
   <img src="/static/img/11133.png" style="margin-left:130px;margin-bottom:40px;width:226px;height:94px;" />
   <dl>
-    <dd>企业文化：</dd>
     <dd>打造黄金百年企业，</dd>
     <dd>谱写徽韵文化传奇。</dd>
     <dd>愿景：</dd>
@@ -29,7 +28,7 @@
   <h3/>
   <ul class="new_list1">
     {{range .xinwen}}
-    <li>2020年 6月  <a href="/detail?id={{.id}}">{{.title}}</a></li>
+    <li>{{ .created}}月&nbsp;&nbsp;&nbsp;&nbsp;<a href="/detail?id={{.id}}">{{.title}}</a></li>
     {{end}}
   </ul>
   <a href="/list?cid=31" style="font-seze:12px;color:#836a49;text-align:right;float:right;margin-right:25px;">更多</a>
