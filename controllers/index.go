@@ -95,6 +95,7 @@ func (this *IndexController) Index() {
 	this.Data["designer"] = designer
 	this.Data["aboutus"] = aboutus
 	this.Data["dongtai"] = dongtai
+	this.Data["view"] = 1
 	this.TplName = "home/index.html"
 }
 
@@ -190,5 +191,6 @@ func (this *IndexController) Index1() {
 	this.Data["aboutus"] = aboutus
 	this.Data["dongtai"] = dongtai
 	this.Data["xinwen"] = xinwen
+	this.Data["view"] = 2
 	this.TplName = "home/index1.html"
 }
