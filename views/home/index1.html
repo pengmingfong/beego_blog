@@ -1,0 +1,126 @@
+{{template "home/layout.html" .}}
+<div class="jituan">
+<img class="jituan-img" src="/static/img/1.jpg" />
+
+<div class="dongtai-list" style="width:454px;padding-right:0px;">
+  <img src="/static/img/1333.png" style="margin-left:130px;margin-bottom:40px;" />
+  <dl>
+    <dd>企业文化：</dd>
+    <dd>打造黄金百年企业，</dd>
+    <dd>谱写徽韵文化传奇。</dd>
+    <dd>愿景：</dd>
+    <dd>打造国内一流黄金珠宝奢侈品牌，</dd>
+    <dd>塑造中国黄金珠宝品牌中的安徽名片。</dd>
+    <dd>使命：</dd>
+    <dd>千年徽韵的文化传承者，</dd>
+    <dd>专注于中国黄金珠宝产业发展，</dd>
+    <dd>为消费者奉献无所超值的产品及服务</dd>
+  </dl>
+</div>
+</div>
+
+<div class="lingdao">
+
+<div class="dongtai-list" style="border:solid 1px #9b7d5f;">
+  
+  <h3 class="mini-title" >
+  <img class="mini-img" style="width:28px;height:28px;" src="/static/img/166a92c109f8ece850c14f58925136e.png" />
+  &nbsp;新闻中心
+  <h3/>
+  <ul class="new_list1">
+    {{range .xinwen}}
+    <li>2020年 6月  <a href="/detail?id={{.id}}">{{.title}}</a></li>
+    {{end}}
+  </ul>
+  <a href="/list?cid=31" style="font-seze:12px;color:#836a49;text-align:right;float:right;margin-right:25px;">更多</a>
+</div>
+<a href="/detail?id=41">
+<div class="dongtai-list dianmian" style="padding-right:0px;border:solid 1px #9b7d5f;">
+  <h3 style="" class="mini-title">
+  <img class="mini-img" style="width:28px;height:28px;" src="/static/img/166a92c109f8ece850c14f58925136e.png" />
+  &nbsp;品牌店面
+  <h3/>
+<!--  <img class="dian-img"  src="/static/img/2.jpg" />-->
+</div>
+</a>
+</div>
+
+<!--  名人堂开始-->
+<div class="mingren" id="">
+<h1 style="border-bottom: 0px;"><img class="mini-img" style="width:28px;height:28px;margin-right:15px;" src="/static/img/166a92c109f8ece850c14f58925136e.png" />大师团队</h1>
+<div class="mingrenk"></div>
+<ul>
+<li ><img src="/static/img/ybw.jpg"/></li>
+<li><img src="/static/img/xjq.jpg"/></li>
+<li ><img src="/static/img/sgw.jpg"/></li>
+<li ><img src="/static/img/mr.jpg"/></li>
+<li><img src="/static/img/gqy.jpg"/></li>
+</ul>
+<div class="mingrenk"></div>
+</div>
+<!--  名人堂end-->
+
+<!--  产品中心开始-->
+<div id="product">
+<h1 style="border-bottom: 0px;"><img class="mini-img" style="width:28px;height:28px;margin-right:15px;" src="/static/img/166a92c109f8ece850c14f58925136e.png" />产品鉴赏</h1>
+<div class="product-list">
+  <ul>
+{{range $index, $elem := .productarticle}}
+<li style="border-bottom-width: 2px">
+<a href="/list?cid={{$elem.cid}}">
+<img src="{{$elem.image}}" /></a>
+</li>
+{{end}}
+  </ul>
+</div>  
+</div>
+
+
+<!--<div id="aboutus">
+<img class="aboutus-leftimg" src="/static/img/186ae8f8a64aa813e156f824b319795.jpg">
+<div class="aboutus-right">
+  <img src="/static/img/about.png">
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安徽黄金集团有限公司是一家集原料购销、设计研发、生产批发、品牌运营、战略投资于一体的大型综合性黄金珠宝企业。
+
+        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;坚持“科学技术是第一生产力”的发展理念。拥有国内顶尖研发团队，全国销售人员高达数千人，先后申请专利百余项，各项性能指标位于国内先进水平。
+
+        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品牌发展至今已经覆盖国内大部分市场，拥有数量庞大的直营、加盟品牌零售店，同时也为全国客户提供一站式全品类黄金钻石珠宝采购批发销售服务。</p>
+</div>
+</div>-->
+
+<div id="news">
+
+<p class="news-top-t" ><img class="mini-img" style="width:28px;height:28px;margin-right:15px;" src="/static/img/166a92c109f8ece850c14f58925136e.png" />NEWS新闻</p>
+<div class="news-left">
+
+<a href="javascript:;" class="guonei" style="background:#9b7d5f;color:white;padding:5px;margin-left:20px;">国内金价</a>
+<a href="javascript:;" class="guoji" style="background:#9b7d5f;color:white;padding:5px;">国际金价</a>
+<img style="" class="guonei-img"src="http://webquotepic.eastmoney.com/GetPic.aspx?id=aum1&imageType=rf&token=44c9d251add88e27b65ed86506f6e5da"/>
+<img style="display:none" class="guoji-img" src="http://webquotepic.eastmoney.com/GetPic.aspx?token=44c9d251add88e27b65ed86506f6e5da&nid=101.GC00Y&type=r&imageType=rf&_=1588673650634"/>
+</div>
+<div class="news-right">
+  <p class="gold-title" style="font-size: 16px;">黄金头条<a href="/list?cid=52" style="color:#836a49">更多</a></p>
+  <ul>
+{{range.goldlist}}
+    <li>
+  <a href="/detail?id={{.id}}"><p class="gold-title-t">{{.title}}</p></a>
+  <p class="gold-desc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{.desc}}<p/>
+</li>
+{{end}}
+
+
+</ul>
+</div>
+</div>
+
+<script>
+$(".guonei").click(function(){
+  $(".guonei-img").attr("style","")
+  $(".guoji-img").attr("style","display:none")
+});
+$(".guoji").click(function(){
+  $(".guonei-img").attr("style","display:none")
+  $(".guoji-img").attr("style","")
+});
+</script>
+{{template "home/footer.html" .}}

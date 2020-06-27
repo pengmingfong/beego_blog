@@ -101,7 +101,6 @@ func GetChild(pid int) []*TreeList {
 		if v.Index == 0 {
 			continue
 		}
-
 		child := GetChild(v.Id)
 		node := &TreeList{
 			Id:   v.Id,

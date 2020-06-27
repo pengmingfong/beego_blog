@@ -10,6 +10,9 @@ th, td { /* table elements 表格元素 */
     margin: 0;
     padding: 0;
 }
+html {
+
+}
 #menu {
 font-size: 16px;
 font-weight: bolder;
@@ -111,7 +114,7 @@ background:#e9d1b5;
 	}
 }
 html{
-	width:100%;float:right;background:#9b7d5f;
+	width:100%;float:right;background:black;
 }
 @media screen and (max-width: 1200px)
 {
