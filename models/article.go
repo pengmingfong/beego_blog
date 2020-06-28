@@ -21,6 +21,7 @@ type Article struct {
 	Index       int
 	Created     string
 	Updated     string
+	Time        string
 }
 
 func (a *Article) TableName() string {

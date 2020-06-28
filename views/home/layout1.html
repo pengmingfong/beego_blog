@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html  class="html">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+        {{if .title}}
+        <title>{{.title}}-打造黄金百年企业.谱写徽韵文化传奇</title>
+        {{if .content}}
+        <meta name="keyword" content="{{.content.Keyword}}">
+        {{else}}
+        <meta name="keyword" content="安徽黄金-打造黄金百年企业.谱写徽韵文化传奇">
+        {{end}}
+{{else}}
+<title>安徽黄金-打造黄金百年企业.谱写徽韵文化传奇</title>
+<meta name="keyword" content="安徽黄金-打造黄金百年企业.谱写徽韵文化传奇">
+{{end}}
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    </head>
+
+{{if eq 1 .view}}
+<link href="/static/css/index.css" rel="stylesheet">
+{{end}}
+{{if eq 2 .view}}
+<link href="/static/css/index1.css" rel="stylesheet">
+{{end}}
+<link href="/static/css/article.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/layui/css/layui.css"  media="all">
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
+    <body style="width:100%;height:100%;">
+    <div style="">
+  <div style="width:1200px;margin:auto;">
+<div class="logo" >
+ <a href="/"><img src="static/img/20200415203535.png"/></a>
+  <span></span>
+</div>
+</div>
+  <div class="header">
+
+<div class="ul_header">
+  <ul class="layui-nav" id="menu" style="padding:0px;background:#9b7d5f;width:100%;text-align: left;list-style-type: none;">
+  <li class="layui-nav-item"><a href="/">首页</a></li>
+  {{range.categorys}}
+  <li class="layui-nav-item">
+    <a href="list?cid={{.Id}}">{{.Name}}</a>
+    {{if .Children}}
+    <dl class="layui-nav-child" style="border-radius:0px">
+      {{range.Children}}
+      <dd><a href="list?cid={{.Id}}">{{.Name}}</a></dd>
+      {{end}}
+    </dl>
+    {{end}}
+  </li>
+  {{end}}
+  </li>
+</ul>
+</div>
+
+</div>
+<div style="width:100%;margin:auto;height:100%;">
+<div id="banner">
+<div class="layui-carousel" id="test1" lay-filter="test1">
+  <div class="layui-carousel" id="test3" lay-filter="test4">
+  <div carousel-item="">
+  {{range.bannerlist}}
+  <div ><img src="{{.image}}" /></div>
+  {{end}}
+  </div>
+</div> 
+<br style='clear:both'/>
+</div> 
+
+</div>
+<div style="width:1200px;margin:auto">
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<script>
+
+layui.use(['carousel', 'form'], function(){
+  var carousel = layui.carousel
+  ,form = layui.form;
+  
+  //常规轮播
+  carousel.render({
+    elem: '#test1'
+    ,arrow: 'always'
+    ,width: '100%'
+    ,height:'540px'
+  });
+  
+  //设定各种参数
+  var ins3 = carousel.render({
+    elem: '#test3'
+  ,width: '100%'
+    ,height: '540px'
+    ,interval: 5000
+  });
+  
+  //事件
+  carousel.on('change(test4)', function(res){
+    console.log(res)
+  });
+  
+  var $ = layui.$, active = {
+    set: function(othis){
+      var THIS = 'layui-bg-normal'
+      ,key = othis.data('key')
+      ,options = {};
+      
+      othis.css('background-color', '#5FB878').siblings().removeAttr('style'); 
+      options[key] = othis.data('value');
+      ins3.reload(options);
+    }
+  };
+  
+  //监听开关
+  form.on('switch(autoplay)', function(){
+    ins3.reload({
+      autoplay: this.checked
+    });
+  });
+  
+  $('.demoSet').on('keyup', function(){
+    var value = this.value
+    ,options = {};
+    if(!/^\d+$/.test(value)) return;
+    
+    options[this.name] = value;
+    ins3.reload(options);
+  });
+  
+  //其它示例
+  $('.demoTest .layui-btn').on('click', function(){
+    var othis = $(this), type = othis.data('type');
+    active[type] ? active[type].call(this, othis) : '';
+  });
+});
+</script>

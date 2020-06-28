@@ -147,7 +147,7 @@ func (this *IndexController) Index1() {
 
 	for _, v := range indexresult {
 		row := make(map[string]interface{})
-
+		categoryData, _ := models.CategoryGetById(v.Cid)
 		row["id"] = v.Id
 		row["cid"] = v.Cid
 		row["image"] = v.Image
@@ -156,6 +156,8 @@ func (this *IndexController) Index1() {
 		row["desc"] = v.Desc
 		row["indexs"] = v.Index
 		row["created"] = time.Now().Format("2006-01")
+		row["time"] = v.Time
+		row["cname"] = categoryData.Name
 		if v.Index == 1 && v.Image != "" {
 			// 产品鉴赏文章
 			if len(prodlist) >= 6 {

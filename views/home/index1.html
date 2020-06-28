@@ -1,20 +1,9 @@
-{{template "home/layout.html" .}}
+{{template "home/layout1.html" .}}
 <div class="jituan">
 <img class="jituan-img" src="/static/img/1.jpg" />
 
 <div class="dongtai-list" style="width:454px;padding-right:0px;">
-  <img src="/static/img/11133.png" style="margin-left:130px;margin-bottom:40px;width:226px;height:94px;" />
-  <dl>
-    <dd>打造黄金百年企业，</dd>
-    <dd>谱写徽韵文化传奇。</dd>
-    <dd>愿景：</dd>
-    <dd>打造国内一流黄金珠宝奢侈品牌，</dd>
-    <dd>塑造中国黄金珠宝品牌中的安徽名片。</dd>
-    <dd>使命：</dd>
-    <dd>千年徽韵的文化传承者，</dd>
-    <dd>专注于中国黄金珠宝产业发展，</dd>
-    <dd>为消费者奉献无所超值的产品及服务</dd>
-  </dl>
+  <img src="/static/img/a013bc34180eda6740d1426519ad7d3.png" style="margin-left:100px;" />
 </div>
 </div>
 
@@ -28,7 +17,7 @@
   <h3/>
   <ul class="new_list1">
     {{range .xinwen}}
-    <li>{{ .created}}月&nbsp;&nbsp;&nbsp;&nbsp;<a href="/detail?id={{.id}}">{{.title}}</a></li>
+    <li>{{ .time}}&nbsp;&nbsp;&nbsp;{{.cname}}&nbsp;&nbsp;&nbsp;<a href="/detail?id={{.id}}">{{.title}}</a></li>
     {{end}}
   </ul>
   <a href="/list?cid=31" style="font-seze:12px;color:#836a49;text-align:right;float:right;margin-right:25px;">更多</a>

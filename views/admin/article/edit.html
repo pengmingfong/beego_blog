@@ -21,6 +21,10 @@
     <input type="text" class="form-control" name="keyword" id="exampleInputEmail1" placeholder="关键词" value="{{.data.Keyword}}">
   </div>
 <div class="form-group">
+    <label for="exampleInputEmail1">文章时间</label>
+    <input type="text" class="form-control" name="time" id="exampleInputEmail1" placeholder="文章时间" value="{{.data.Time}}">
+  </div>
+<div class="form-group">
 <label for="exampleInputEmail1">文章分类</label>
 <select class="form-control" name="cid">
   {{range .categorys}}
