@@ -42,8 +42,9 @@
           <td><a class="btn btn-default">隐藏</a></td>
           {{end}}
           <td>
+          <a href="/admin/article/delete?id={{.id}}" class="btn btn-danger">删除</a>
           <a href="/admin/article/edit?id={{.id}}" class="btn btn-info">修改</a>
-          <a href="/detail?id={{.id}}" class="btn btn-danger">预览</a>
+          <a href="/detail?id={{.id}}" class="btn btn-success">预览</a>
           </td>
         </tr>
         {{end}}

@@ -23,6 +23,7 @@ func back() {
 	beego.Router("/admin/article/list", &admincontroller.ArticleController{}, "get:List")
 	beego.Router("/admin/article/edit", &admincontroller.ArticleController{}, "get:Edit")
 	beego.Router("/admin/article/edit", &admincontroller.ArticleController{}, "post:EditOne")
+	beego.Router("/admin/article/delete", &admincontroller.ArticleController{}, "get:Delete")
 	// 分类
 	beego.Router("/admin/category/list", &admincontroller.CategoryController{}, "get:List")
 	beego.Router("/admin/category/add", &admincontroller.CategoryController{}, "post:AddOne")

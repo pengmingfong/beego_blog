@@ -88,3 +88,12 @@ func (r *Article) Update(fields ...string) error {
 	}
 	return nil
 }
+
+func DeleteArticle(id int) (int64, error) {
+
+	o := orm.NewOrm()
+	if num, err := o.Delete(&Article{Id: id}); err != nil {
+		return num, err
+	}
+	return 0, nil
+}

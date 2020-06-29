@@ -182,6 +182,13 @@ func (a *ArticleController) AddOne() {
 	a.Ctx.Redirect(302, "/admin/article/list?page=1&code=2")
 }
 
+func (a *ArticleController) Delete() {
+	id, _ := a.GetInt("id")
+	models.DeleteArticle(id)
+
+	a.Ctx.Redirect(302, "/admin/article/list.html?page=1&code=2")
+}
+
 // 单个文件上传
 func (i *ArticleController) Uploadone() {
 	f, h, err := i.GetFile("filename")
