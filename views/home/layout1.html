@@ -60,7 +60,11 @@ layui.use('element', function(){
   <li class="layui-nav-item"><a href="/">首页</a></li>
   {{range.categorys}}
   <li class="layui-nav-item">
+    {{if .Url}}
+    <a href="{{.Url}}">{{.Name}}</a>
+    {{else}}
     <a href="list?cid={{.Id}}">{{.Name}}</a>
+    {{end}}
     {{if .Children}}
     <dl class="layui-nav-child" style="border-radius:0px">
       {{range.Children}}

@@ -11,6 +11,7 @@ type Category struct {
 	Level   int
 	Name    string
 	Index   int
+	Url     string
 	Created string
 	Updated string
 }
@@ -18,6 +19,7 @@ type Category struct {
 type TreeList struct {
 	Id       int         `json:"id"`
 	Name     string      `json:"name"`
+	Url      string      `json:"url"`
 	Pid      int         `json:"pid"`
 	Children []*TreeList `json:"children"`
 }
@@ -106,6 +108,7 @@ func GetChild(pid int) []*TreeList {
 			Id:   v.Id,
 			Name: v.Name,
 			Pid:  v.Pid,
+			Url:  v.Url,
 		}
 		node.Children = child
 		treeList = append(treeList, node)

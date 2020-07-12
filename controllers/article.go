@@ -17,7 +17,8 @@ func (a *ArticleController) Detail() {
 	article, _ := models.ArticleById(id)
 
 	category, _ := models.CategoryGetById(article.Cid)
-
+	view := 1
+	a.Data["view"] = view
 	a.Data["title"] = article.Title
 	a.Data["content"] = article
 	a.Data["category"] = category
@@ -65,11 +66,13 @@ func (a *ArticleController) List() {
 		list[k] = row
 	}
 
+	view := 1
 	a.Data["title"] = category.Name
 	a.Data["cid"] = cid
 	a.Data["alist"] = list
 	a.Data["category"] = category
 	a.Data["categorymap"] = categorymap
+	a.Data["view"] = view
 	a.TplName = "home/list.html"
 }
 
