@@ -70,7 +70,7 @@ layui.use('element', function(){
       {{range.Children}}
       <dd>
 {{if .Url}}
-<a href="{{Url}}">{{.Name}}</a>
+<a href="{{.Url}}">{{.Name}}</a>
 {{else}}
 <a href="list?cid={{.Id}}">{{.Name}}</a>
 {{end}}
