@@ -68,7 +68,14 @@ layui.use('element', function(){
     {{if .Children}}
     <dl class="layui-nav-child" style="border-radius:0px">
       {{range.Children}}
-      <dd><a href="list?cid={{.Id}}">{{.Name}}</a></dd>
+      <dd>
+{{if .Url}}
+<a href="{{Url}}">{{.Name}}</a>
+{{else}}
+<a href="list?cid={{.Id}}">{{.Name}}</a>
+{{end}}
+        
+      </dd>
       {{end}}
     </dl>
     {{end}}
