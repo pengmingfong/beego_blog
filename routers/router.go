@@ -10,7 +10,7 @@ import (
 func init() {
 	beego.Router("/", &controllers.IndexController{}, "get:Index1")
 	// beego.Router("/index", &controllers.IndexController{}, "get:Index1")
-	beego.Router("/index", &controllers.IndexController{}, "get:Index1")
+	// beego.Router("/index", &controllers.IndexController{}, "get:Index1")
 	beego.Router("/detail", &controllers.ArticleController{}, "get:Detail")
 	beego.Router("/list", &controllers.ArticleController{}, "get:List")
 	back()
