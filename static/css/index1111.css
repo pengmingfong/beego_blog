@@ -11,7 +11,7 @@ th, td { /* table elements 表格元素 */
     padding: 0;
 }
 html {
-	background:#f0f0f0
+
 }
 #menu {
 font-size: 16px;
@@ -34,8 +34,9 @@ text-decoration: none;
 margin: 0px;
 /*padding-top: 8px;*/
 display: block; /* 作为一个块 */
-padding-right: 42px; /* 设置块的属性 */
-padding-left: 42px;
+padding-right: 15px; /* 设置块的属性 */
+/*padding-bottom: 8px;*/
+padding-left: 15px;
 	font-size: 16px;
 }
 
@@ -495,7 +496,7 @@ font-size:12px;
 	background-repeat:no-repeat;
 	background-size:100% 100%;
 	-moz-background-size:100% 100%;
-	margin-bottom:10px;
+	margin-bottom:20px;
 	/*background: white;*/
 	color:#9b7d5f;
 	height:50px;
@@ -608,70 +609,4 @@ font-size:12px;
 	color: #9b7d5f;
 	margin-top: 18px;
 	float: right;
-}
-.new_list1{
-	width: 600px;
-	height: 350px;
-}
-.new_list1 li{
-	float:left;margin:5px 20px;width: 560px;
-	color: #bf9c6d;
-	font-size: 20px;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3;
-	overflow: hidden;
-	height: 28px;
-	line-height: 28px;
-}
-.new_list1 li a{
-
-	color: #bf9c6d;
-	font-size: 20px;
-}
-.mingren {
-	width: 1200px;
-	height: 286px;
-	float: left;
-	margin-top: 30px;
-}
-.mingren h1 {
-	border: solid 1px #9b7d5f;
-	color: #9b7d5f;
-	font-size: 22px;
-	background: white;
-	height: 50px;
-	line-height: 50px;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	padding-left: 15px;
-	width: 1185px;
-	background-image: url("/static/img/81bfea48f7b8a3d1ba7b90e8d0edd8d.png");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-}
-.mingren ul{
-	border: solid 1px #9b7d5f;
-	height: 176px;
-	width: 1127.5px;
-	padding-left: 72.5px;
-	/*padding-right: 72.5px;*/
-}
-.mingrenk {
-	width: 1202px;
-	height: 25px;
-	background-image: url("/static/img/kaung.png");
-}
-.mingren ul li img {
-	width: 170px;
-	height: 176px;
-}
-
-.mingren ul li  {
-margin-right: 50px;
-}
-
-.mingren ul li:last-of-type  {
-	margin-right: 0px;
 }
