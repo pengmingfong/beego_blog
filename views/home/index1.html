@@ -1,6 +1,6 @@
 {{template "home/layout1.html" .}}
 <div class="jituan">
-<img class="jituan-img" src="/static/img/20200922214248.jpg" />
+<img class="jituan-img" src="/static/img/1.jpg" />
 
 <div class="dongtai-list" style="width:454px;padding-right:0px;">
   <img src="/static/img/a013bc34180eda6740d1426519ad7d3.png" style="margin-left:100px;" />
@@ -22,17 +22,42 @@
   </ul>
   <a href="/list?cid=55" style="font-seze:12px;color:#836a49;text-align:right;float:right;margin-right:25px;">更多</a>
 </div>
-<a href="/detail?id=41">
-<div class="dongtai-list dianmian" style="padding-right:0px;border:solid 1px #9b7d5f;">
-  <h3 style="" class="mini-title">
-  <img class="mini-img" style="width:28px;height:28px;" src="/static/img/166a92c109f8ece850c14f58925136e.png" />
-  &nbsp;<a href="/detail?id=22" style="color: #9b7d5f;">招商加盟</a>
-  <h3/>
-<!--  <img class="dian-img"  src="/static/img/2.jpg" />-->
-</div>
-</a>
-</div>
+<!--<a href="/detail?id=41">-->
 
+<div class="dongtai-list " style="padding-right:0px;border:solid 1px #9b7d5f;">
+  <div class="layui-carousel" id="test33" lay-filter="test33">
+  <div carousel-item="">
+  <div ><img style="width:600px;height:452px" src="/static/img/2.jpg" /></div>
+<div ><img style="width:600px;height:452px" src="/static/img/2.jpg" /></div>
+<div ><img style="width:600px;height:452px" src="/static/img/2.jpg" /></div>
+<div ><img style="width:600px;height:452px" src="/static/img/2.jpg" /></div>
+  </div>
+</div> 
+<br style='clear:both'/>
+<!--  <img class="dian-img"  src="/static/img/2.jpg" classs="dongtai-list dianmian" />-->
+</div>
+<!--</a>-->
+</div>
+<script>
+layui.use(['carousel', 'form'], function(){
+  var carousel1 = layui.carousel
+  ,form = layui.form;
+  //改变下时间间隔、动画类型、高度
+
+  //图片轮播
+  carousel1.render({
+    elem: '#test33'
+    ,width: '600px'
+    ,height: '452px'
+    ,interval: 5000
+    ,anim: 'fade'
+  });
+});
+
+
+
+
+</script>
 <!--  名人堂开始-->
 <div class="mingren" id="">
 <h1 style="border-bottom: 0px;"><img class="mini-img" style="width:28px;height:28px;margin-right:15px;" src="/static/img/166a92c109f8ece850c14f58925136e.png" />大师团队</h1>
