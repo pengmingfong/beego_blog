@@ -18,6 +18,8 @@ func init() {
 
 func back() {
 	beego.Router("/admin/article/add", &admincontroller.ArticleController{}, "get:Add")
+	beego.Router("/login", &admincontroller.LoginController{}, "get:Login")
+	beego.Router("/login", &admincontroller.LoginController{}, "post:LoginUser")
 	beego.Router("/admin/article/add", &admincontroller.ArticleController{}, "post:AddOne")
 	beego.Router("/upload", &admincontroller.ArticleController{}, "post:Upload")
 	beego.Router("/admin/article/list", &admincontroller.ArticleController{}, "get:List")
@@ -38,4 +40,15 @@ func back() {
 	beego.Router("/admin/banner/edit", &admincontroller.BannerController{}, "get:Edit")
 	beego.Router("/admin/banner/edit", &admincontroller.BannerController{}, "post:EditOne")
 	beego.Router("/admin/banner/delete", &admincontroller.BannerController{}, "get:Delete")
+	// product
+	beego.Router("/admin/product/list", &admincontroller.ProductController{}, "get:List")
+	beego.Router("/admin/product/add", &admincontroller.ProductController{}, "get:Add")
+	beego.Router("/admin/product/edit", &admincontroller.ProductController{}, "get:Edit")
+	beego.Router("/admin/product/edit", &admincontroller.ProductController{}, "post:EditOne")
+	beego.Router("/admin/product/delete", &admincontroller.ProductController{}, "get:Delete")
+
+	// master
+	beego.Router("/admin/master/list", &admincontroller.MasterController{}, "get:List")
+	beego.Router("/admin/master/edit", &admincontroller.MasterController{}, "get:Edit")
+	beego.Router("/admin/master/edit", &admincontroller.MasterController{}, "post:EditOne")
 }

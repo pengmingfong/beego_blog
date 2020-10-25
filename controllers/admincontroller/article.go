@@ -11,7 +11,12 @@ import (
 )
 
 type ArticleController struct {
-	beego.Controller
+	BaseController
+}
+
+func (a *ArticleController) Login() {
+
+	a.TplName = "admin/article/login.html"
 }
 
 func (a *ArticleController) Add() {
@@ -30,7 +35,6 @@ func (a *ArticleController) Add() {
 }
 
 func (a *ArticleController) List() {
-
 	page, _ := a.GetInt("page")
 	code, _ := a.GetInt("code")
 

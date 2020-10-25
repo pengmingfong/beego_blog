@@ -3,12 +3,10 @@ package admincontroller
 import (
 	"fmt"
 	"gold/models"
-
-	"github.com/astaxie/beego"
 )
 
 type BannerController struct {
-	beego.Controller
+	BaseController
 }
 
 func (c *BannerController) List() {

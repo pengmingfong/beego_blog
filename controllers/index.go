@@ -129,6 +129,24 @@ func (this *IndexController) Index1() {
 		bannerlist[k] = row
 	}
 
+	masterresult, lens := models.MasterLists(1, 10)
+	masterlist := make([]map[string]interface{}, lens)
+	for k, v := range masterresult {
+		row := make(map[string]interface{})
+		row["image"] = v.Image
+		row["url"] = v.Url
+		masterlist[k] = row
+	}
+
+	productresult, lens := models.ProductLists(1, 10)
+	productlist := make([]map[string]interface{}, lens)
+	for k, v := range productresult {
+		row := make(map[string]interface{})
+		row["image"] = v.Image
+		row["url"] = v.Url
+		productlist[k] = row
+	}
+
 	categorys := models.GetChild(0)
 
 	indexresult, _ := models.IndexList(1)
@@ -184,6 +202,9 @@ func (this *IndexController) Index1() {
 	this.Data["title"] = "安徽黄金-打造黄金百年企业.谱写徽韵文化传奇"
 	this.Data["list"] = list
 	this.Data["bannerlist"] = bannerlist
+	this.Data["masterlist"] = masterlist
+	this.Data["productlist"] = productlist
+	this.Data["productresult"] = productresult
 	this.Data["productarticle"] = prodlist
 	this.Data["goldlist"] = goldlist
 	this.Data["nationallist"] = nationallist

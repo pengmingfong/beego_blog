@@ -4,12 +4,10 @@ import (
 	"fmt"
 	"gold/models"
 	"time"
-
-	"github.com/astaxie/beego"
 )
 
 type CategoryController struct {
-	beego.Controller
+	BaseController
 }
 
 func (c *CategoryController) Add() {

@@ -70,11 +70,14 @@ layui.use(['carousel', 'form'], function(){
 <h1 style="border-bottom: 0px;"><img class="mini-img" style="width:28px;height:28px;margin-right:15px;" src="/static/img/166a92c109f8ece850c14f58925136e.png" />大师团队</h1>
 <div class="mingrenk"></div>
 <ul>
-<li ><a href="/detail?id=77"><img src="/static/img/ybw.jpg"/></a></li>
+<!--<li ><a href="/detail?id=77"><img src="/static/img/ybw.jpg"/></a></li>
 <li><a href="/detail?id=91"><img src="/static/img/20200918095657.png"/></a></li>
 <li ><a href="/detail?id=79"><img src="/static/img/sgw.jpg"/></a></li>
 <li ><a href="/detail?id=92"><img src="/static/img/u=1786974574,3092883305&fm=26&gp=0.jpg"/></a></li>
-<li><a href="/detail?id=80"><img src="/static/img/gqy.jpg"/></a></li>
+<li><a href="/detail?id=80"><img src="/static/img/gqy.jpg"/></a></li>-->
+{{range.masterlist}}
+<li><a href="{{.url}}"><img src="{{.image}}"/></a></li>
+{{end}}
 </ul>
 <div class="mingrenk"></div>
 </div>
@@ -85,10 +88,11 @@ layui.use(['carousel', 'form'], function(){
 <h1 style="border-bottom: 0px;"><img class="mini-img" style="width:28px;height:28px;margin-right:15px;" src="/static/img/166a92c109f8ece850c14f58925136e.png" />产品鉴赏</h1>
 <div class="product-list">
   <ul>
-{{range $index, $elem := .productarticle}}
+
+{{range.productlist}}
 <li style="border-bottom-width: 2px">
-<a href="/list?cid={{$elem.cid}}">
-<img src="{{$elem.image}}" /></a>
+<a href="{{.url}}">
+<img src="{{.image}}" /></a>
 </li>
 {{end}}
   </ul>

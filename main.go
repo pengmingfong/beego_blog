@@ -9,6 +9,8 @@ import (
 )
 
 func main() {
+	beego.BConfig.WebConfig.Session.SessionOn = true
+	beego.BConfig.WebConfig.Session.SessionGCMaxLifetime = 36000
 	models.Init()
 	beego.Run()
 }
