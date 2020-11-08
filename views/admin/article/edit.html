@@ -66,11 +66,7 @@
         var E = window.wangEditor
         var editor = new E('#div1')
         var $content = $('#content')
-        editor.customConfig.onchange = function (html) {
-            // 监控变化，同步更新到 textarea
-            $content.val(html)
-        }
-        editor.customConfig.fontSizes = {
+                editor.customConfig.fontSizes = {
             'normal': { name: '16px', value: '3' },
             'x-small': { name: '16px', value: '1' },
             'small': { name: '13px', value: '2' },
@@ -79,6 +75,11 @@
             'xx-large': { name: '32px', value: '6' },
             'xxx-large': { name: '48px', value: '7' },
         }
+        editor.customConfig.onchange = function (html) {
+            // 监控变化，同步更新到 textarea
+            $content.val(html)
+        }
+
         editor.customConfig.uploadImgServer = '/upload'
         editor.customConfig.uploadFileName = 'filename'
         editor.customConfig.uploadImgMaxLength = 5
