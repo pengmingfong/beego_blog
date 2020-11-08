@@ -58,11 +58,11 @@ background:#e9d1b5;
 }
 .ul_header{
 	height: 60px;
-	width: 75rem;
+	width: 1200px;
 	margin: auto;
 }
 .search {
-	width:75rem;
+	width:1200px;
 	display:block;
     float:right;
     height: 40px;
@@ -90,7 +90,7 @@ background:#e9d1b5;
     background: white;
 }
 .logo {
-	width:75rem;
+	width:1200px;
 	height:100px;
 	float:left;
     vertical-align:middle;
@@ -107,19 +107,19 @@ background:#e9d1b5;
 }
 @media screen and (max-width: 1000px)
 {
-	.header { width:75rem; }
+	.header { width:1200px; }
 	body{
-		width:75rem;
+		width:1200px;
 	}
 }
 html{
 	width:100%;float:right;background:#f0f0f0;
 }
-@media screen and (max-width: 75rem)
+@media screen and (max-width: 1200px)
 {
-	html { width:75rem; }
+	html { width:1200px; }
 	body{
-		width:75rem;
+		width:1200px;
 	}
 }
 .layui-nav li a{
@@ -156,7 +156,7 @@ html{
             background: orange;
         }
 .jituan {
-	width: 75rem;
+	width: 1200px;
 	height: 420px;
 	float: left;
 	margin-top: 30px;
@@ -167,12 +167,12 @@ html{
 }
 .lingdao {
 	height: 450px;
-	width: 75rem;
+	width: 1200px;
 	float: left;
 	margin-top: 30px;
 }
 #product{
-	width:75rem;
+	width:1200px;
 	height:510px;
 	float:right;
 	margin-top: 30px;
@@ -259,7 +259,7 @@ color:#c0c0c0;
 	-moz-background-size:100% 100%;
 }
 #aboutus{
-	width:75rem;
+	width:1200px;
 	height:350px;
 	background:#f2f2f2;
 float:right;
@@ -289,14 +289,14 @@ float:right;
 	padding-top:20px;
 }
 #news{
-	width:75rem;
+	width:1200px;
 	height:450px;
 	float:right;
 	margin-top: 30px;
 	border: solid 1px #9b7d5f;
 }
 .news-top{
-	width:75rem;
+	width:1200px;
 	height:50px;
 }
 .news-top-title {
@@ -420,7 +420,7 @@ a {
 }
 #dongtai{
 
-	width:75rem;
+	width:1200px;
 	height:300px;
 float:right;
 margin-top:20px;
@@ -630,7 +630,7 @@ font-size:12px;
 	font-size: 20px;
 }
 .mingren {
-	width: 75rem;
+	width: 1200px;
 	height: 286px;
 	float: left;
 	margin-top: 30px;
