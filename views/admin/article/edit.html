@@ -66,18 +66,19 @@
         var E = window.wangEditor
         var editor = new E('#div1')
         var $content = $('#content')
-                editor.customConfig.fontSizes = {
-            'normal': { name: '16px', value: '3' },
-            'large': { name: '18px', value: '4' },
-            'x-large': { name: '24px', value: '5' },
-            'xx-large': { name: '32px', value: '6' },
-            'xxx-large': { name: '48px', value: '7' },
-        }
         editor.customConfig.onchange = function (html) {
             // 监控变化，同步更新到 textarea
             $content.val(html)
         }
-
+  editor.customConfig.fontSizes = {
+      'x-small': { name: '10px', value: '1' },
+      'small': { name: '26px', value: '2' },
+      'normal': { name: '16px', value: '3' },
+      'large': { name: '18px', value: '4' },
+      'x-large': { name: '24px', value: '5' },
+      'xx-large': { name: '32px', value: '6' },
+      'xxx-large': { name: '48px', value: '7' },
+  }
         editor.customConfig.uploadImgServer = '/upload'
         editor.customConfig.uploadFileName = 'filename'
         editor.customConfig.uploadImgMaxLength = 5
@@ -89,6 +90,5 @@
   <button type="submit" class="btn btn-default" id="btn1">修改</button>
 </form>
     </div>
-
         
 {{template "admin/footer.html" .}}
